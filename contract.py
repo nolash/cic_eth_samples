@@ -66,22 +66,22 @@ class ContractTransaction:
         self.hash = hsh.hex()
 
     def _deployNoArgs(self, account):
-       return self.contract.constructor().transact({'from': account})
+        return self.contract.constructor().transact({'from': account, 'gas': 9000000})
     
     def _deployOneArgs(self, account, one):
-       return self.contract.constructor(one).transact({'from': account})
+       return self.contract.constructor(one).transact({'from': account, 'gas': 9000000})
 
     def _deployTwoArgs(self, account, one, two):
-       return self.contract.constructor(one, two).transact({'from': account})
+       return self.contract.constructor(one, two).transact({'from': account, 'gas': 9000000})
 
     def _deployThreeArgs(self, account, one, two, three):
-        return self.contract.constructor(one, two, three).transact({'from': account})
+        return self.contract.constructor(one, two, three).transact({'from': account, 'gas': 9000000})
 
     def _deployFourArgs(self, account, one, two, three, four):
-       return self.contract.constructor(one, two, three, four).transact({'from': account})
+       return self.contract.constructor(one, two, three, four).transact({'from': account, 'gas': 9000000})
 
     def _deployFiveArgs(self, account, one, two, three, four, five):
-        return self.contract.constructor(one, two, three, four, five).transact({'from': account, 'gas': 6000000})
+        return self.contract.constructor(one, two, three, four, five).transact({'from': account, 'gas': 9000000})
 
 
     """Call function on contract with eth value transfer
