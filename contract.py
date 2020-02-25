@@ -99,11 +99,20 @@ class ContractTransaction:
     def callValue(self, addr, value, functionName, *args):
         f = self.contract.get_function_by_name(functionName)
         if len(args) == 1:
-            return self._callValueOneArg(f, args[0])
+            return self._callValueOneArgs(addr, value, f, args[0])
+        else:
+            return self._callValueNoArgs(addr, value, f)
 
-
-    def _callValueOneArg(self, f, arg):
+    def _callValueNoArgs(self, addr, value, f):
+        return f().transact({
+            'to': addr,
+            'from': self.addr,
+            'value': value,
+        })
+         
+    def _callValueOneArgs(self, addr, f, arg):
         return f(args).transact({
+            'to': addr,
             'from': self.addr,
             'value': value,
         })

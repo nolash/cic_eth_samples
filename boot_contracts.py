@@ -51,9 +51,9 @@ addr_reserve_two = c.rcpt['contractAddress']
 # deposit eth in the reserve tokens
 c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
 c.fromJsonFile(s.root + "/data/" + 'EtherToken.json')
-c.callValue(addr_reserve_one, 1000000, 'deposit')
+r = c.callValue(addr_reserve_one, 1000000, 'deposit')
 
-c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
 c.fromJsonFile(s.root + "/data/" + 'EtherToken.json')
 c.callValue(addr_reserve_two, 1000000, 'deposit')
 
@@ -111,13 +111,6 @@ c.deploy(s.w3.eth.accounts[1])
 addr_contractregistry_two = c.rcpt['contractAddress']
 
 
-# output summary of deployed contracts
-logg.debug("reserves: %s %s", addr_reserve_one, addr_reserve_two)
-logg.debug("tokens: %s %s", addr_smart_one, addr_smart_two)
-logg.debug("token controllers: %s %s", addr_smartcontroller_one, addr_smartcontroller_two)
-logg.debug("registry: %s %s %s", addr_registry, addr_contractregistry_one, addr_contractregistry_two)
-
-
 # deploy converter contracts
 c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
 c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json')
@@ -126,5 +119,23 @@ addr_converter_one = c.rcpt['contractAddress']
 
 c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
 c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json')
-c.deploy(s.w3.eth.accounts[1], addr_smartcontroller_one, addr_contractregistry_one, 0, addr_smart_one, 10)
-addr_converter_one = c.rcpt['contractAddress']
+c.deploy(s.w3.eth.accounts[1], addr_smartcontroller_two, addr_contractregistry_two, 0, addr_smart_one, 10)
+addr_converter_two = c.rcpt['contractAddress']
+
+# transfer reserve to tokens
+c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
+c.fromJsonFile(s.root + '/data/' + 'EtherToken.json', addr_reserve_one)
+c.call(s.w3.eth.accounts[0], 'transfer', addr_converter_one, 10)
+
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
+c.fromJsonFile(s.root + '/data/' + 'EtherToken.json', addr_reserve_two)
+c.call(s.w3.eth.accounts[1], 'transfer', addr_converter_two, 10000)
+
+
+# output summary of deployed contracts
+logg.debug("reserves: %s %s", addr_reserve_one, addr_reserve_two)
+logg.debug("tokens: %s %s", addr_smart_one, addr_smart_two)
+logg.debug("token controllers: %s %s", addr_smartcontroller_one, addr_smartcontroller_two)
+logg.debug("registry: %s %s %s", addr_registry, addr_contractregistry_one, addr_contractregistry_two)
+
+
