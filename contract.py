@@ -51,8 +51,12 @@ class ContractTransaction:
             hsh = self._deployNoArgs(account)
         if len(args) == 1:
             hsh = self._deployOneArgs(account, args[0])
+        if len(args) == 2:
+            hsh = self._deployTwoArgs(account, args[0], args[1])
         if len(args) == 3:
             hsh = self._deployThreeArgs(account, args[0], args[1], args[2])
+        if len(args) == 4:
+            hsh = self._deployFourArgs(account, args[0], args[1], args[2], args[3])
         if len(args) == 5:
             hsh = self._deployFiveArgs(account, args[0], args[1], args[2], args[3], args[4])
         if hsh == '':
@@ -67,9 +71,15 @@ class ContractTransaction:
     def _deployOneArgs(self, account, one):
        return self.contract.constructor(one).transact({'from': account})
 
+    def _deployTwoArgs(self, account, one, two):
+       return self.contract.constructor(one, two).transact({'from': account})
+
     def _deployThreeArgs(self, account, one, two, three):
         return self.contract.constructor(one, two, three).transact({'from': account})
-    
+
+    def _deployFourArgs(self, account, one, two, three, four):
+       return self.contract.constructor(one, two, three, four).transact({'from': account})
+
     def _deployFiveArgs(self, account, one, two, three, four, five):
         return self.contract.constructor(one, two, three, four, five).transact({'from': account, 'gas': 6000000})
 

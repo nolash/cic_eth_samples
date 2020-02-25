@@ -103,23 +103,28 @@ addr_registry = c.rcpt['contractAddress']
 c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
 c.fromJsonFile(s.root + '/data/' + 'ContractRegistry.json')
 c.deploy(s.w3.eth.accounts[0])
-addr_contract_registry = c.rcpt['contractAddress']
+addr_contractregistry_one = c.rcpt['contractAddress']
+
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
+c.fromJsonFile(s.root + '/data/' + 'ContractRegistry.json')
+c.deploy(s.w3.eth.accounts[1])
+addr_contractregistry_two = c.rcpt['contractAddress']
 
 
-# add converter to registry
-#c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
-#c.fromJsonFile(s.root + '/data/' + 'BancorConverterRegistry.json')
-#c.call(s.w3.eth.accounts[0], 'registerConverter', addr_smart_one,, addr_converter)
-
-
+# output summary of deployed contracts
 logg.debug("reserves: %s %s", addr_reserve_one, addr_reserve_two)
 logg.debug("tokens: %s %s", addr_smart_one, addr_smart_two)
 logg.debug("token controllers: %s %s", addr_smartcontroller_one, addr_smartcontroller_two)
-logg.debug("registry: %s", addr_registry)
+logg.debug("registry: %s %s %s", addr_registry, addr_contractregistry_one, addr_contractregistry_two)
+
 
 # deploy converter contracts
 c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
 c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json')
-logg.debug("executing converter with %s %s %s", addr_smartcontroller_one, addr_contract_registry, addr_reserve_one)
-c.deploy(s.w3.eth.accounts[0], addr_smartcontroller_one, addr_contract_registry, 0, zeroAddr, 0)
+c.deploy(s.w3.eth.accounts[0], addr_smartcontroller_one, addr_contractregistry_one, 0, addr_smart_two, 10)
+addr_converter_one = c.rcpt['contractAddress']
+
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
+c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json')
+c.deploy(s.w3.eth.accounts[1], addr_smartcontroller_one, addr_contractregistry_one, 0, addr_smart_one, 10)
 addr_converter_one = c.rcpt['contractAddress']
