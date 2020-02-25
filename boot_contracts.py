@@ -122,20 +122,50 @@ c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json')
 c.deploy(s.w3.eth.accounts[1], addr_smartcontroller_two, addr_contractregistry_two, 0, addr_smart_one, 10)
 addr_converter_two = c.rcpt['contractAddress']
 
+
 # transfer reserve to tokens
 c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
 c.fromJsonFile(s.root + '/data/' + 'EtherToken.json', addr_reserve_one)
-c.call(s.w3.eth.accounts[0], 'transfer', addr_converter_one, 10)
+c.call(s.w3.eth.accounts[0], 'transfer', addr_converter_one, 10000)
 
 c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
 c.fromJsonFile(s.root + '/data/' + 'EtherToken.json', addr_reserve_two)
 c.call(s.w3.eth.accounts[1], 'transfer', addr_converter_two, 10000)
 
 
+# set allowance for balance of tokens to converters
+c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
+c.fromJsonFile(s.root + '/data/' + 'EtherToken.json', addr_reserve_one)
+c.call(s.w3.eth.accounts[0], 'approve', addr_converter_one, 1000000)
+
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
+c.fromJsonFile(s.root + '/data/' + 'EtherToken.json', addr_reserve_two)
+c.call(s.w3.eth.accounts[1], 'approve', addr_converter_two, 1000000)
+
+
+# transfer ownership of token to the token itself
+c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
+c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json', addr_converter_one)
+c.call(s.w3.eth.accounts[0], 'transferOwnership', addr_smart_one)
+
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
+c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json', addr_converter_two)
+c.call(s.w3.eth.accounts[1], 'transferOwnership', addr_smart_two)
+
+
+# each side accepts token ownership change
+c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
+c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json', s.w3.eth.accounts[0])
+c.call(s.w3.eth.accounts[0], 'acceptTokenOwnership')
+
+c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
+c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json', s.w3.eth.accounts[1])
+c.call(s.w3.eth.accounts[1], 'acceptTokenOwnership')
+
 # output summary of deployed contracts
 logg.debug("reserves: %s %s", addr_reserve_one, addr_reserve_two)
 logg.debug("tokens: %s %s", addr_smart_one, addr_smart_two)
 logg.debug("token controllers: %s %s", addr_smartcontroller_one, addr_smartcontroller_two)
 logg.debug("registry: %s %s %s", addr_registry, addr_contractregistry_one, addr_contractregistry_two)
-
+logg.debug("converters: %s %s", addr_converter_one, addr_converter_two)
 

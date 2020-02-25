@@ -130,11 +130,24 @@ class ContractTransaction:
     """        
     def call(self, addr, functionName, *args):
         f = self.contract.get_function_by_name(functionName)
+        if len(args) == 1:
+            return self._callOneArgs(f, addr, args[0])
         if len(args) == 2:
-            return self._callTwoArg(f, addr, args[0], args[1])
+            return self._callTwoArgs(f, addr, args[0], args[1])
+        else:
+            return self._callNoArgs(f, addr)
 
+    def _callNoArgs(self, f, addr):
+        return f().transact({
+            'from': self.addr,
+        })
+ 
+    def _callOneArgs(self, f, addr, one):
+        return f(one).transact({
+            'from': self.addr,
+        })
 
-    def _callTwoArg(self, f, addr, one, two):
+    def _callTwoArgs(self, f, addr, one, two):
         return f(one, two).transact({
             'from': self.addr,
         })
