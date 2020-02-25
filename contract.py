@@ -1,6 +1,7 @@
 import json
 import os
 import logging
+import time
 
 logg = logging.getLogger('contract')
 
@@ -32,7 +33,7 @@ class ContractTransaction:
     """
     def fromJsonFile(self, js_file, address=None):
         fd = os.open(js_file, os.O_RDONLY)
-        data = os.read(fd, 1024000)
+        data = os.read(fd, 1024 * 1024 * 10)
         os.close(fd)
         contract_json = json.loads(data)
         self.contract = self.w3.eth.contract(address=address, bytecode=contract_json['bytecode'], abi=contract_json['abi'])
@@ -48,19 +49,32 @@ class ContractTransaction:
         hsh = ''
         if len(args) == 0:
             hsh = self._deployNoArgs(account)
+        if len(args) == 1:
+            hsh = self._deployOneArgs(account, args[0])
         if len(args) == 3:
             hsh = self._deployThreeArgs(account, args[0], args[1], args[2])
+        if len(args) == 5:
+            hsh = self._deployFiveArgs(account, args[0], args[1], args[2], args[3], args[4])
+        if hsh == '':
+            raise Exception('hash missing ' + str(self.contract))
+        logg.debug("deploy hash %s", hsh)
         self.rcpt = self.w3.eth.waitForTransactionReceipt(hsh)
-        self.hash = hsh
+        self.hash = hsh.hex()
 
     def _deployNoArgs(self, account):
        return self.contract.constructor().transact({'from': account})
+    
+    def _deployOneArgs(self, account, one):
+       return self.contract.constructor(one).transact({'from': account})
 
     def _deployThreeArgs(self, account, one, two, three):
-       return self.contract.constructor(one, two, three).transact({'from': account})
+        return self.contract.constructor(one, two, three).transact({'from': account})
     
+    def _deployFiveArgs(self, account, one, two, three, four, five):
+        return self.contract.constructor(one, two, three, four, five).transact({'from': account, 'gas': 6000000})
 
-    """Call function on contract
+
+    """Call function on contract with eth value transfer
 
     Args:
         addr:
@@ -85,6 +99,16 @@ class ContractTransaction:
         })
 
 
+    """Call function on contract with eth value transfer
+
+    Args:
+        addr:
+            address of contract
+        functionName:
+            function name to call
+        args:
+            array of args to pass to contract function
+    """        
     def call(self, addr, functionName, *args):
         f = self.contract.get_function_by_name(functionName)
         if len(args) == 2:
@@ -95,5 +119,3 @@ class ContractTransaction:
         return f(one, two).transact({
             'from': self.addr,
         })
-
-
