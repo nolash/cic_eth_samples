@@ -99,6 +99,12 @@ c.deploy(s.w3.eth.accounts[0])
 addr_registry = c.rcpt['contractAddress']
 
 
+# deploy bancon network linked to registry
+c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
+c.fromJsonFile(s.root + '/data/' + 'BancorNetwork.json')
+c.deploy(s.w3.eth.accounts[0], addr_registry)
+addr_network = c.rcpt['contractAddress']
+
 # deploy contract registry utility contract
 c = ContractTransaction(s.w3, s.w3.eth.accounts[0])
 c.fromJsonFile(s.root + '/data/' + 'ContractRegistry.json')
@@ -161,6 +167,7 @@ c.call(s.w3.eth.accounts[0], 'acceptTokenOwnership')
 c = ContractTransaction(s.w3, s.w3.eth.accounts[1])
 c.fromJsonFile(s.root + '/data/' + 'BancorConverter.json', s.w3.eth.accounts[1])
 c.call(s.w3.eth.accounts[1], 'acceptTokenOwnership')
+
 
 # output summary of deployed contracts
 logg.debug("reserves: %s %s", addr_reserve_one, addr_reserve_two)
