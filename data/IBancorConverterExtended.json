@@ -1,14 +1,35 @@
 {
-  "contractName": "BancorConverterUpgrader",
+  "contractName": "IBancorConverterExtended",
   "abi": [
     {
       "constant": true,
-      "inputs": [],
-      "name": "BANCOR_CONVERTER_UPGRADER",
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "connectors",
       "outputs": [
         {
           "name": "",
-          "type": "bytes32"
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint32"
+        },
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "bool"
         }
       ],
       "payable": false,
@@ -17,12 +38,29 @@
     },
     {
       "constant": true,
-      "inputs": [],
-      "name": "BNT_TOKEN",
+      "inputs": [
+        {
+          "name": "_fromToken",
+          "type": "address"
+        },
+        {
+          "name": "_toToken",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getReturn",
       "outputs": [
         {
           "name": "",
-          "type": "bytes32"
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -30,73 +68,65 @@
       "type": "function"
     },
     {
-      "constant": true,
-      "inputs": [],
-      "name": "CONTRACT_REGISTRY",
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fromToken",
+          "type": "address"
+        },
+        {
+          "name": "_toToken",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "name": "_minReturn",
+          "type": "uint256"
+        }
+      ],
+      "name": "change",
       "outputs": [
         {
           "name": "",
-          "type": "bytes32"
+          "type": "uint256"
         }
       ],
       "payable": false,
-      "stateMutability": "view",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "constant": true,
-      "inputs": [],
-      "name": "version",
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fromToken",
+          "type": "address"
+        },
+        {
+          "name": "_toToken",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "name": "_minReturn",
+          "type": "uint256"
+        }
+      ],
+      "name": "convert",
       "outputs": [
         {
           "name": "",
-          "type": "string"
+          "type": "uint256"
         }
       ],
       "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "BANCOR_CONVERTER_FACTORY",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "BNT_CONVERTER",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "BANCOR_FORMULA",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -106,34 +136,6 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "registry",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "CONTRACT_FEATURES",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -153,77 +155,7 @@
     {
       "constant": true,
       "inputs": [],
-      "name": "BANCOR_NETWORK",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "BANCOR_GAS_PRICE_LIMIT",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "CONVERTER_CONVERSION_WHITELIST",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "BANCOR_X",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "BANCOR_X_UPGRADER",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "newOwner",
+      "name": "conversionWhitelist",
       "outputs": [
         {
           "name": "",
@@ -249,13 +181,31 @@
       "type": "function"
     },
     {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "constant": true,
       "inputs": [],
-      "name": "NON_STANDARD_TOKEN_REGISTRY",
+      "name": "token",
       "outputs": [
         {
           "name": "",
-          "type": "bytes32"
+          "type": "address"
         }
       ],
       "payable": false,
@@ -263,76 +213,122 @@
       "type": "function"
     },
     {
+      "constant": true,
+      "inputs": [],
+      "name": "maxConversionFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "conversionFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "connectorTokenCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "reserveTokenCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [
         {
-          "name": "_registry",
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "connectorTokens",
+      "outputs": [
+        {
+          "name": "",
           "type": "address"
         }
       ],
       "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "reserveTokens",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_whitelist",
+          "type": "address"
+        }
+      ],
+      "name": "setConversionWhitelist",
+      "outputs": [],
+      "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor"
+      "type": "function"
     },
     {
-      "anonymous": false,
+      "constant": false,
       "inputs": [
         {
-          "indexed": true,
-          "name": "_converter",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "name": "_owner",
-          "type": "address"
-        }
-      ],
-      "name": "ConverterOwned",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "_oldConverter",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "name": "_newConverter",
-          "type": "address"
-        }
-      ],
-      "name": "ConverterUpgrade",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "_prevOwner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
           "name": "_newOwner",
           "type": "address"
         }
       ],
-      "name": "OwnerUpdate",
-      "type": "event"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_registry",
-          "type": "address"
-        }
-      ],
-      "name": "setRegistry",
+      "name": "transferTokenOwnership",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -342,54 +338,197 @@
       "constant": false,
       "inputs": [
         {
-          "name": "_version",
-          "type": "uint16"
-        }
-      ],
-      "name": "upgrade",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_version",
-          "type": "bytes32"
-        }
-      ],
-      "name": "upgrade",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_converter",
+          "name": "_token",
           "type": "address"
         },
         {
-          "name": "_version",
-          "type": "bytes32"
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
         }
       ],
-      "name": "upgradeOld",
+      "name": "withdrawTokens",
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptTokenOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newManager",
+          "type": "address"
+        }
+      ],
+      "name": "transferManagement",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptManagement",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_conversionFee",
+          "type": "uint32"
+        }
+      ],
+      "name": "setConversionFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_weight",
+          "type": "uint32"
+        },
+        {
+          "name": "_enableVirtualBalance",
+          "type": "bool"
+        }
+      ],
+      "name": "addConnector",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_connectorToken",
+          "type": "address"
+        },
+        {
+          "name": "_weight",
+          "type": "uint32"
+        },
+        {
+          "name": "_enableVirtualBalance",
+          "type": "bool"
+        },
+        {
+          "name": "_virtualBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateConnector",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_connectorToken",
+          "type": "address"
+        }
+      ],
+      "name": "getConnectorBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_reserveToken",
+          "type": "address"
+        }
+      ],
+      "name": "getReserveBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "reserves",
+      "outputs": [
+        {
+          "name": "virtualBalance",
+          "type": "uint256"
+        },
+        {
+          "name": "weight",
+          "type": "uint32"
+        },
+        {
+          "name": "isVirtualBalanceEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "isSaleEnabled",
+          "type": "bool"
+        },
+        {
+          "name": "isSet",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_CONVERTER_UPGRADER\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BNT_TOKEN\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"CONTRACT_REGISTRY\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_CONVERTER_FACTORY\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BNT_CONVERTER\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_FORMULA\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"registry\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"CONTRACT_FEATURES\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_version\",\"type\":\"uint16\"}],\"name\":\"upgrade\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_NETWORK\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_GAS_PRICE_LIMIT\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"CONVERTER_CONVERSION_WHITELIST\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_registry\",\"type\":\"address\"}],\"name\":\"setRegistry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_version\",\"type\":\"bytes32\"}],\"name\":\"upgrade\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_X\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"BANCOR_X_UPGRADER\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"newOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_converter\",\"type\":\"address\"},{\"name\":\"_version\",\"type\":\"bytes32\"}],\"name\":\"upgradeOld\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"NON_STANDARD_TOKEN_REGISTRY\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_registry\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_converter\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"ConverterOwned\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_oldConverter\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_newConverter\",\"type\":\"address\"}],\"name\":\"ConverterUpgrade\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_prevOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"OwnerUpdate\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"acceptOwnership()\":{\"details\":\"used by a new owner to accept an ownership transfer\"},\"setRegistry(address)\":{\"details\":\"allows the owner to update the contract registry contract address\",\"params\":{\"_registry\":\"address of a contract registry contract\"}},\"transferOwnership(address)\":{\"details\":\"allows transferring the contract ownership the new owner still needs to accept the transfer can only be called by the contract owner\",\"params\":{\"_newOwner\":\"new contract owner\"}},\"upgrade(bytes32)\":{\"details\":\"upgrades an old converter to the latest version will throw if ownership wasn't transferred to the upgrader before calling this function. ownership of the new converter will be transferred back to the original owner. fires the ConverterUpgrade event upon success. can only be called by a converter\",\"params\":{\"_version\":\"old converter version\"}},\"upgrade(uint16)\":{\"details\":\"upgrades an old converter to the latest version will throw if ownership wasn't transferred to the upgrader before calling this function. ownership of the new converter will be transferred back to the original owner. fires the ConverterUpgrade event upon success. can only be called by a converter\",\"params\":{\"_version\":\"old converter version\"}},\"upgradeOld(address,bytes32)\":{\"details\":\"upgrades an old converter to the latest version will throw if ownership wasn't transferred to the upgrader before calling this function. ownership of the new converter will be transferred back to the original owner. fires the ConverterUpgrade event upon success.\",\"params\":{\"_converter\":\"old converter contract address\",\"_version\":\"old converter version\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/lash/src/ext/sempo/contracts/solidity/contracts/converter/BancorConverterUpgrader.sol\":\"BancorConverterUpgrader\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/lash/src/ext/sempo/contracts/solidity/contracts/ContractIds.sol\":{\"keccak256\":\"0x41cd76a3eaceb46768bd771f590c8df2885b949724ec4712331c827c4f117b2c\",\"urls\":[\"bzzr://1b0fecd4a9bca45be9eb7a3da3c4b60d4ce22c1d7d93f9659f5fac79b12a0199\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/FeatureIds.sol\":{\"keccak256\":\"0x6d6517398dad41cc15594748cb03d207e562855a0915cc061b0e8137ea5996ef\",\"urls\":[\"bzzr://2b04738382336e2774ca2512fd03e3b7a23c6272801ac592d19cf1cd01da8ac7\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/converter/BancorConverterUpgrader.sol\":{\"keccak256\":\"0x47a4cd76f98e8976ff187a3e8e71cf7bb9958a2d0a0feb7a5adf7b1f9040dcbd\",\"urls\":[\"bzzr://686cc48d74fde715210cfab6732ec751b280383003a88d2cd3dda4593ff112d2\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/converter/interfaces/IBancorConverter.sol\":{\"keccak256\":\"0x2af1dc3731bc3d9c2b6b9f512fd04face50efc7c253a31552ce1121a80ec89c1\",\"urls\":[\"bzzr://4f258d6672c4e44ad1bd19ca0d6072181e1634d06d9250a0b1dd0d1d7351cbf2\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/converter/interfaces/IBancorConverterFactory.sol\":{\"keccak256\":\"0xd942bb31c1ca58133ff214ddf6f6c4e41d542135068af345095118bfcb7d3b9e\",\"urls\":[\"bzzr://e0893df306ad4bf04438e079e2635021d0a61df22d7ae7402e16d9e932d33678\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/converter/interfaces/IBancorConverterUpgrader.sol\":{\"keccak256\":\"0x295d67fd062b39eeb1bcaf7253917978b058147f6cd6f7fa541b513016131dc3\",\"urls\":[\"bzzr://424dc3bf878691a9ebee799ea72a4c16fb1afbc919b66e7827028cf0dc1905ad\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/token/interfaces/IERC20Token.sol\":{\"keccak256\":\"0x465f98ed290fb4f65f2d74e938f47c2fa9f7302e766266d8f9326d4c703d5ce3\",\"urls\":[\"bzzr://9746fbda9ee3a4d1e0ed3c5f5d27ebb93114139ad29ae04f313de057f9d1bc92\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/token/interfaces/ISmartToken.sol\":{\"keccak256\":\"0xd9369c561a659cdf78c9b7ad6458c5fd566296bc743f06011b5b02ffeadf0310\",\"urls\":[\"bzzr://b3f5f823967d07420b2c919fb28a51f94206f541124f4f63d835285d0fff8910\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/Owned.sol\":{\"keccak256\":\"0x78745ba2880b46edbd793166c7248b8ed9741189fbafb7ecc4fc83423140c415\",\"urls\":[\"bzzr://5c16b883804782ae67dcca47fcf7ec6564f109c6d165688ca4587d8723f570be\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/interfaces/IContractFeatures.sol\":{\"keccak256\":\"0x021e780f03961a8498409da5e57e36844bb6d06e6c6acf8a895f23c4c260b33e\",\"urls\":[\"bzzr://825b4d839d0bca34665f11c61b52de5887cb068302a4cbd262c5bf994b16940d\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/interfaces/IContractRegistry.sol\":{\"keccak256\":\"0x4fc9f35a48ef73f00d5ea0a6fb2018eb5801f1c5b828935a34cfebf479084c86\",\"urls\":[\"bzzr://3f880643a62ae35a2592ea2f079452a9276dc1d54d5d1c33462738109c787db5\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/interfaces/IOwned.sol\":{\"keccak256\":\"0x3bfadfd06a9f37a8687474694252513f00d84ff9074c9d3c69c311d62686e588\",\"urls\":[\"bzzr://b168ba3d91c3119b53b54679bec05592fe124e42f2345e785a4fd08c8225b39e\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/interfaces/IWhitelist.sol\":{\"keccak256\":\"0x6f2de503926432c5e49191520bdb0c0463ed69924287529b0f83ef95565287fb\",\"urls\":[\"bzzr://75da01831a1c6509463537ea59b0cfc88349b8ebb5d3fc56a1260d0e1953acdc\"]}},\"version\":1}",
-  "bytecode": "0x60c0604052600360808190527f302e33000000000000000000000000000000000000000000000000000000000060a090815262000040916002919062000094565b503480156200004e57600080fd5b5060405160208062001d7f83398101604052516000805433600160a060020a03199182161790915560038054909116600160a060020a0390921691909117905562000139565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10620000d757805160ff191683800117855562000107565b8280016001018555821562000107579182015b8281111562000107578251825591602001919060010190620000ea565b506200011592915062000119565b5090565b6200013691905b8082111562000115576000815560010162000120565b90565b611c3680620001496000396000f3006080604052600436106101195763ffffffff60e060020a6000350416630c87355e811461011e5780631d000b611461014557806325f9bfef1461015a57806354fd4d501461016f5780635a46f06c146101f957806362614ae61461020e5780636d7bd3fc1461022357806379ba5097146102385780637b1039991461024f57806383315b6e146102805780638da5cb5b1461029557806390f58c96146102aa5780639232494e146102c65780639249993a146102db57806392d1abb7146102f0578063a91ee0dc14610305578063bc444e1314610326578063c4a8598e1461033e578063cc97b38f14610353578063d4ee1d9014610368578063f2cfed871461037d578063f2fde38b146103a1578063f5286b9c146103c2575b600080fd5b34801561012a57600080fd5b506101336103d7565b60408051918252519081900360200190f35b34801561015157600080fd5b506101336103fb565b34801561016657600080fd5b5061013361041f565b34801561017b57600080fd5b50610184610443565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101be5781810151838201526020016101a6565b50505050905090810190601f1680156101eb5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561020557600080fd5b506101336104ce565b34801561021a57600080fd5b506101336104f2565b34801561022f57600080fd5b50610133610516565b34801561024457600080fd5b5061024d61053a565b005b34801561025b57600080fd5b5061026461060d565b60408051600160a060020a039092168252519081900360200190f35b34801561028c57600080fd5b5061013361061c565b3480156102a157600080fd5b50610264610640565b3480156102b657600080fd5b5061024d61ffff6004351661064f565b3480156102d257600080fd5b50610133610660565b3480156102e757600080fd5b50610133610684565b3480156102fc57600080fd5b506101336106a8565b34801561031157600080fd5b5061024d600160a060020a03600435166106ad565b34801561033257600080fd5b5061024d60043561073e565b34801561034a57600080fd5b50610133610748565b34801561035f57600080fd5b5061013361076c565b34801561037457600080fd5b50610264610790565b34801561038957600080fd5b5061024d600160a060020a036004351660243561079f565b3480156103ad57600080fd5b5061024d600160a060020a0360043516610be1565b3480156103ce57600080fd5b50610133610cd8565b7f42616e636f72436f6e766572746572557067726164657200000000000000000081565b7f424e54546f6b656e00000000000000000000000000000000000000000000000081565b7f436f6e747261637452656769737472790000000000000000000000000000000081565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156104c65780601f1061049b576101008083540402835291602001916104c6565b820191906000526020600020905b8154815290600101906020018083116104a957829003601f168201915b505050505081565b7f42616e636f72436f6e766572746572466163746f72790000000000000000000081565b7f424e54436f6e766572746572000000000000000000000000000000000000000081565b7f42616e636f72466f726d756c610000000000000000000000000000000000000081565b600154600160a060020a0316331461059c576040805160e560020a62461bcd02815260206004820152600660248201527f6639373561650000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600354600160a060020a031681565b7f436f6e747261637446656174757265730000000000000000000000000000000081565b600054600160a060020a031681565b61065d3361ffff831661079f565b50565b7f42616e636f724e6574776f726b0000000000000000000000000000000000000081565b7f42616e636f7247617350726963654c696d69740000000000000000000000000081565b600181565b600054600160a060020a0316331461070f576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b61065d338261079f565b7f42616e636f72580000000000000000000000000000000000000000000000000081565b7f42616e636f72585570677261646572000000000000000000000000000000000081565b600154600160a060020a031681565b6000808080807f302e3400000000000000000000000000000000000000000000000000000000008614156107d257600194505b86935083600160a060020a0316638da5cb5b6040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561081357600080fd5b505af1158015610827573d6000803e3d6000fd5b505050506040513d602081101561083d57600080fd5b5051925061084a84610cfc565b61085384610d8b565b9150610860848387611318565b61086a848361167d565b610875848387611770565b83600160a060020a031663fc0c546a6040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156108b357600080fd5b505af11580156108c7573d6000803e3d6000fd5b505050506040513d60208110156108dd57600080fd5b5051604080517f8da5cb5b0000000000000000000000000000000000000000000000000000000081529051919250600160a060020a038087169290841691638da5cb5b9160048083019260209291908290030181600087803b15801561094257600080fd5b505af1158015610956573d6000803e3d6000fd5b505050506040513d602081101561096c57600080fd5b5051600160a060020a03161415610a475783600160a060020a03166321e6b53d836040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b1580156109d857600080fd5b505af11580156109ec573d6000803e3d6000fd5b5050505081600160a060020a03166338a5e0166040518163ffffffff1660e060020a028152600401600060405180830381600087803b158015610a2e57600080fd5b505af1158015610a42573d6000803e3d6000fd5b505050505b83600160a060020a031663f2fde38b846040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b158015610aa257600080fd5b505af1158015610ab6573d6000803e3d6000fd5b5050505081600160a060020a031663f2fde38b846040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b158015610b1557600080fd5b505af1158015610b29573d6000803e3d6000fd5b5050505081600160a060020a031663e4edf852846040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b158015610b8857600080fd5b505af1158015610b9c573d6000803e3d6000fd5b5050604051600160a060020a038086169350871691507f522b846327aea07106ec4d64ae4b6d6dea47689884dab650fd3a1f2e1d6a270190600090a350505050505050565b600054600160a060020a03163314610c43576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600054600160a060020a0382811691161415610ca9576040805160e560020a62461bcd02815260206004820152600660248201527f6632306333390000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b7f4e6f6e5374616e64617264546f6b656e5265676973747279000000000000000081565b80600160a060020a03166379ba50976040518163ffffffff1660e060020a028152600401600060405180830381600087803b158015610d3a57600080fd5b505af1158015610d4e573d6000803e3d6000fd5b5050604051309250600160a060020a03841691507ff764604894fa993d4370a9cb28b81c11deb1aafdb2909156173ae3833dad807590600090a350565b60008060008060008060008088600160a060020a031663fc0c546a6040518163ffffffff1660e060020a028152600401602060405180830381600087803b158015610dd557600080fd5b505af1158015610de9573d6000803e3d6000fd5b505050506040513d6020811015610dff57600080fd5b5051604080517f94c275ad0000000000000000000000000000000000000000000000000000000081529051919750600160a060020a038b16916394c275ad916004808201926020929091908290030181600087803b158015610e6057600080fd5b505af1158015610e74573d6000803e3d6000fd5b505050506040513d6020811015610e8a57600080fd5b5051600354604080517fbb34534c0000000000000000000000000000000000000000000000000000000081527f42616e636f72436f6e766572746572466163746f72790000000000000000000060048201529051929750600160a060020a039091169163bb34534c916024808201926020929091908290030181600087803b158015610f1557600080fd5b505af1158015610f29573d6000803e3d6000fd5b505050506040513d6020811015610f3f57600080fd5b5051600354604080517f034efaeb000000000000000000000000000000000000000000000000000000008152600160a060020a038a81166004830152928316602482015263ffffffff891660448201526000606482018190526084820181905291519397509187169263034efaeb9260a4808201936020939283900390910190829087803b158015610fd057600080fd5b505af1158015610fe4573d6000803e3d6000fd5b505050506040513d6020811015610ffa57600080fd5b5051604080517f79ba50970000000000000000000000000000000000000000000000000000000081529051919450849350600160a060020a038416916379ba50979160048082019260009290919082900301818387803b15801561105d57600080fd5b505af1158015611071573d6000803e3d6000fd5b5050505081600160a060020a031663c8c2fe6c6040518163ffffffff1660e060020a028152600401600060405180830381600087803b1580156110b357600080fd5b505af11580156110c7573d6000803e3d6000fd5b5050600354604080517fbb34534c0000000000000000000000000000000000000000000000000000000081527f436f6e747261637446656174757265730000000000000000000000000000000060048201529051600160a060020a03909216935063bb34534c92506024808201926020929091908290030181600087803b15801561115157600080fd5b505af1158015611165573d6000803e3d6000fd5b505050506040513d602081101561117b57600080fd5b5051604080517fa5fbf287000000000000000000000000000000000000000000000000000000008152600160a060020a038c811660048301526001602483015291519293509083169163a5fbf287916044808201926020929091908290030181600087803b1580156111ec57600080fd5b505af1158015611200573d6000803e3d6000fd5b505050506040513d602081101561121657600080fd5b50511561130c5788600160a060020a031663c45d3d926040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561125b57600080fd5b505af115801561126f573d6000803e3d6000fd5b505050506040513d602081101561128557600080fd5b50519650600160a060020a0387161561130c5781600160a060020a0316634af80f0e886040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b1580156112f357600080fd5b505af1158015611307573d6000803e3d6000fd5b505050505b50979650505050505050565b60008060008060008060008060008961139a578b600160a060020a03166371f52bf36040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561136957600080fd5b505af115801561137d573d6000803e3d6000fd5b505050506040513d602081101561139357600080fd5b5051611405565b8b600160a060020a0316639b99a8e26040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156113d857600080fd5b505af11580156113ec573d6000803e3d6000fd5b505050506040513d602081101561140257600080fd5b50515b9350600092505b8361ffff168361ffff16101561166f578961149f578b600160a060020a03166319b64015846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b15801561146e57600080fd5b505af1158015611482573d6000803e3d6000fd5b505050506040513d602081101561149857600080fd5b5051611519565b8b600160a060020a031663d031370b846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b1580156114ec57600080fd5b505af1158015611500573d6000803e3d6000fd5b505050506040513d602081101561151657600080fd5b50515b91506115268c838c611a9b565b604080517f3f4d2fc2000000000000000000000000000000000000000000000000000000008152600160a060020a03808a16600483015263ffffffff8716602483015285151560448301529151969f50949d50929b5090995097508493508d1691633f4d2fc29160648082019260009290919082900301818387803b1580156115ae57600080fd5b505af11580156115c2573d6000803e3d6000fd5b50505050861561166457604080517f0ca78923000000000000000000000000000000000000000000000000000000008152600160a060020a03838116600483015263ffffffff8b1660248301528915156044830152606482018c90529151918d1691630ca789239160848082019260009290919082900301818387803b15801561164b57600080fd5b505af115801561165f573d6000803e3d6000fd5b505050505b60019092019161140c565b505050505050505050505050565b600082600160a060020a031663579cd3ca6040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156116bd57600080fd5b505af11580156116d1573d6000803e3d6000fd5b505050506040513d60208110156116e757600080fd5b5051604080517fecbca55d00000000000000000000000000000000000000000000000000000000815263ffffffff831660048201529051919250600160a060020a0384169163ecbca55d9160248082019260009290919082900301818387803b15801561175357600080fd5b505af1158015611767573d6000803e3d6000fd5b50505050505050565b6000806000806000856117ec5787600160a060020a03166371f52bf36040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156117bb57600080fd5b505af11580156117cf573d6000803e3d6000fd5b505050506040513d60208110156117e557600080fd5b5051611857565b87600160a060020a0316639b99a8e26040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561182a57600080fd5b505af115801561183e573d6000803e3d6000fd5b505050506040513d602081101561185457600080fd5b50515b9350600092505b8361ffff168361ffff161015611a9157856118f15787600160a060020a03166319b64015846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b1580156118c057600080fd5b505af11580156118d4573d6000803e3d6000fd5b505050506040513d60208110156118ea57600080fd5b505161196b565b87600160a060020a031663d031370b846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b15801561193e57600080fd5b505af1158015611952573d6000803e3d6000fd5b505050506040513d602081101561196857600080fd5b50515b915081905080600160a060020a03166370a08231896040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050602060405180830381600087803b1580156119cb57600080fd5b505af11580156119df573d6000803e3d6000fd5b505050506040513d60208110156119f557600080fd5b5051604080517f5e35359e000000000000000000000000000000000000000000000000000000008152600160a060020a0384811660048301528a81166024830152604482018490529151929750908a1691635e35359e9160648082019260009290919082900301818387803b158015611a6d57600080fd5b505af1158015611a81573d6000803e3d6000fd5b50506001909401935061185e9050565b5050505050505050565b600080600080600085611b515787600160a060020a0316630e53aae9886040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a0316815260200191505060a060405180830381600087803b158015611b0357600080fd5b505af1158015611b17573d6000803e3d6000fd5b505050506040513d60a0811015611b2d57600080fd5b50805160208201516040830151606084015160809094015192939192909190611bf6565b87600160a060020a031663d66bd524886040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a0316815260200191505060a060405180830381600087803b158015611bac57600080fd5b505af1158015611bc0573d6000803e3d6000fd5b505050506040513d60a0811015611bd657600080fd5b508051602082015160408301516060840151608090940151929391929091905b939c929b50909950975090955093505050505600a165627a7a723058209879fd7ad13e98161c6eaef8c63297b2106dc9f84e3e79e920d34b528ece05060029",
-  "deployedBytecode": "0x6080604052600436106101195763ffffffff60e060020a6000350416630c87355e811461011e5780631d000b611461014557806325f9bfef1461015a57806354fd4d501461016f5780635a46f06c146101f957806362614ae61461020e5780636d7bd3fc1461022357806379ba5097146102385780637b1039991461024f57806383315b6e146102805780638da5cb5b1461029557806390f58c96146102aa5780639232494e146102c65780639249993a146102db57806392d1abb7146102f0578063a91ee0dc14610305578063bc444e1314610326578063c4a8598e1461033e578063cc97b38f14610353578063d4ee1d9014610368578063f2cfed871461037d578063f2fde38b146103a1578063f5286b9c146103c2575b600080fd5b34801561012a57600080fd5b506101336103d7565b60408051918252519081900360200190f35b34801561015157600080fd5b506101336103fb565b34801561016657600080fd5b5061013361041f565b34801561017b57600080fd5b50610184610443565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101be5781810151838201526020016101a6565b50505050905090810190601f1680156101eb5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561020557600080fd5b506101336104ce565b34801561021a57600080fd5b506101336104f2565b34801561022f57600080fd5b50610133610516565b34801561024457600080fd5b5061024d61053a565b005b34801561025b57600080fd5b5061026461060d565b60408051600160a060020a039092168252519081900360200190f35b34801561028c57600080fd5b5061013361061c565b3480156102a157600080fd5b50610264610640565b3480156102b657600080fd5b5061024d61ffff6004351661064f565b3480156102d257600080fd5b50610133610660565b3480156102e757600080fd5b50610133610684565b3480156102fc57600080fd5b506101336106a8565b34801561031157600080fd5b5061024d600160a060020a03600435166106ad565b34801561033257600080fd5b5061024d60043561073e565b34801561034a57600080fd5b50610133610748565b34801561035f57600080fd5b5061013361076c565b34801561037457600080fd5b50610264610790565b34801561038957600080fd5b5061024d600160a060020a036004351660243561079f565b3480156103ad57600080fd5b5061024d600160a060020a0360043516610be1565b3480156103ce57600080fd5b50610133610cd8565b7f42616e636f72436f6e766572746572557067726164657200000000000000000081565b7f424e54546f6b656e00000000000000000000000000000000000000000000000081565b7f436f6e747261637452656769737472790000000000000000000000000000000081565b6002805460408051602060018416156101000260001901909316849004601f810184900484028201840190925281815292918301828280156104c65780601f1061049b576101008083540402835291602001916104c6565b820191906000526020600020905b8154815290600101906020018083116104a957829003601f168201915b505050505081565b7f42616e636f72436f6e766572746572466163746f72790000000000000000000081565b7f424e54436f6e766572746572000000000000000000000000000000000000000081565b7f42616e636f72466f726d756c610000000000000000000000000000000000000081565b600154600160a060020a0316331461059c576040805160e560020a62461bcd02815260206004820152600660248201527f6639373561650000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600354600160a060020a031681565b7f436f6e747261637446656174757265730000000000000000000000000000000081565b600054600160a060020a031681565b61065d3361ffff831661079f565b50565b7f42616e636f724e6574776f726b0000000000000000000000000000000000000081565b7f42616e636f7247617350726963654c696d69740000000000000000000000000081565b600181565b600054600160a060020a0316331461070f576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b61065d338261079f565b7f42616e636f72580000000000000000000000000000000000000000000000000081565b7f42616e636f72585570677261646572000000000000000000000000000000000081565b600154600160a060020a031681565b6000808080807f302e3400000000000000000000000000000000000000000000000000000000008614156107d257600194505b86935083600160a060020a0316638da5cb5b6040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561081357600080fd5b505af1158015610827573d6000803e3d6000fd5b505050506040513d602081101561083d57600080fd5b5051925061084a84610cfc565b61085384610d8b565b9150610860848387611318565b61086a848361167d565b610875848387611770565b83600160a060020a031663fc0c546a6040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156108b357600080fd5b505af11580156108c7573d6000803e3d6000fd5b505050506040513d60208110156108dd57600080fd5b5051604080517f8da5cb5b0000000000000000000000000000000000000000000000000000000081529051919250600160a060020a038087169290841691638da5cb5b9160048083019260209291908290030181600087803b15801561094257600080fd5b505af1158015610956573d6000803e3d6000fd5b505050506040513d602081101561096c57600080fd5b5051600160a060020a03161415610a475783600160a060020a03166321e6b53d836040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b1580156109d857600080fd5b505af11580156109ec573d6000803e3d6000fd5b5050505081600160a060020a03166338a5e0166040518163ffffffff1660e060020a028152600401600060405180830381600087803b158015610a2e57600080fd5b505af1158015610a42573d6000803e3d6000fd5b505050505b83600160a060020a031663f2fde38b846040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b158015610aa257600080fd5b505af1158015610ab6573d6000803e3d6000fd5b5050505081600160a060020a031663f2fde38b846040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b158015610b1557600080fd5b505af1158015610b29573d6000803e3d6000fd5b5050505081600160a060020a031663e4edf852846040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b158015610b8857600080fd5b505af1158015610b9c573d6000803e3d6000fd5b5050604051600160a060020a038086169350871691507f522b846327aea07106ec4d64ae4b6d6dea47689884dab650fd3a1f2e1d6a270190600090a350505050505050565b600054600160a060020a03163314610c43576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600054600160a060020a0382811691161415610ca9576040805160e560020a62461bcd02815260206004820152600660248201527f6632306333390000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b7f4e6f6e5374616e64617264546f6b656e5265676973747279000000000000000081565b80600160a060020a03166379ba50976040518163ffffffff1660e060020a028152600401600060405180830381600087803b158015610d3a57600080fd5b505af1158015610d4e573d6000803e3d6000fd5b5050604051309250600160a060020a03841691507ff764604894fa993d4370a9cb28b81c11deb1aafdb2909156173ae3833dad807590600090a350565b60008060008060008060008088600160a060020a031663fc0c546a6040518163ffffffff1660e060020a028152600401602060405180830381600087803b158015610dd557600080fd5b505af1158015610de9573d6000803e3d6000fd5b505050506040513d6020811015610dff57600080fd5b5051604080517f94c275ad0000000000000000000000000000000000000000000000000000000081529051919750600160a060020a038b16916394c275ad916004808201926020929091908290030181600087803b158015610e6057600080fd5b505af1158015610e74573d6000803e3d6000fd5b505050506040513d6020811015610e8a57600080fd5b5051600354604080517fbb34534c0000000000000000000000000000000000000000000000000000000081527f42616e636f72436f6e766572746572466163746f72790000000000000000000060048201529051929750600160a060020a039091169163bb34534c916024808201926020929091908290030181600087803b158015610f1557600080fd5b505af1158015610f29573d6000803e3d6000fd5b505050506040513d6020811015610f3f57600080fd5b5051600354604080517f034efaeb000000000000000000000000000000000000000000000000000000008152600160a060020a038a81166004830152928316602482015263ffffffff891660448201526000606482018190526084820181905291519397509187169263034efaeb9260a4808201936020939283900390910190829087803b158015610fd057600080fd5b505af1158015610fe4573d6000803e3d6000fd5b505050506040513d6020811015610ffa57600080fd5b5051604080517f79ba50970000000000000000000000000000000000000000000000000000000081529051919450849350600160a060020a038416916379ba50979160048082019260009290919082900301818387803b15801561105d57600080fd5b505af1158015611071573d6000803e3d6000fd5b5050505081600160a060020a031663c8c2fe6c6040518163ffffffff1660e060020a028152600401600060405180830381600087803b1580156110b357600080fd5b505af11580156110c7573d6000803e3d6000fd5b5050600354604080517fbb34534c0000000000000000000000000000000000000000000000000000000081527f436f6e747261637446656174757265730000000000000000000000000000000060048201529051600160a060020a03909216935063bb34534c92506024808201926020929091908290030181600087803b15801561115157600080fd5b505af1158015611165573d6000803e3d6000fd5b505050506040513d602081101561117b57600080fd5b5051604080517fa5fbf287000000000000000000000000000000000000000000000000000000008152600160a060020a038c811660048301526001602483015291519293509083169163a5fbf287916044808201926020929091908290030181600087803b1580156111ec57600080fd5b505af1158015611200573d6000803e3d6000fd5b505050506040513d602081101561121657600080fd5b50511561130c5788600160a060020a031663c45d3d926040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561125b57600080fd5b505af115801561126f573d6000803e3d6000fd5b505050506040513d602081101561128557600080fd5b50519650600160a060020a0387161561130c5781600160a060020a0316634af80f0e886040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b1580156112f357600080fd5b505af1158015611307573d6000803e3d6000fd5b505050505b50979650505050505050565b60008060008060008060008060008961139a578b600160a060020a03166371f52bf36040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561136957600080fd5b505af115801561137d573d6000803e3d6000fd5b505050506040513d602081101561139357600080fd5b5051611405565b8b600160a060020a0316639b99a8e26040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156113d857600080fd5b505af11580156113ec573d6000803e3d6000fd5b505050506040513d602081101561140257600080fd5b50515b9350600092505b8361ffff168361ffff16101561166f578961149f578b600160a060020a03166319b64015846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b15801561146e57600080fd5b505af1158015611482573d6000803e3d6000fd5b505050506040513d602081101561149857600080fd5b5051611519565b8b600160a060020a031663d031370b846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b1580156114ec57600080fd5b505af1158015611500573d6000803e3d6000fd5b505050506040513d602081101561151657600080fd5b50515b91506115268c838c611a9b565b604080517f3f4d2fc2000000000000000000000000000000000000000000000000000000008152600160a060020a03808a16600483015263ffffffff8716602483015285151560448301529151969f50949d50929b5090995097508493508d1691633f4d2fc29160648082019260009290919082900301818387803b1580156115ae57600080fd5b505af11580156115c2573d6000803e3d6000fd5b50505050861561166457604080517f0ca78923000000000000000000000000000000000000000000000000000000008152600160a060020a03838116600483015263ffffffff8b1660248301528915156044830152606482018c90529151918d1691630ca789239160848082019260009290919082900301818387803b15801561164b57600080fd5b505af115801561165f573d6000803e3d6000fd5b505050505b60019092019161140c565b505050505050505050505050565b600082600160a060020a031663579cd3ca6040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156116bd57600080fd5b505af11580156116d1573d6000803e3d6000fd5b505050506040513d60208110156116e757600080fd5b5051604080517fecbca55d00000000000000000000000000000000000000000000000000000000815263ffffffff831660048201529051919250600160a060020a0384169163ecbca55d9160248082019260009290919082900301818387803b15801561175357600080fd5b505af1158015611767573d6000803e3d6000fd5b50505050505050565b6000806000806000856117ec5787600160a060020a03166371f52bf36040518163ffffffff1660e060020a028152600401602060405180830381600087803b1580156117bb57600080fd5b505af11580156117cf573d6000803e3d6000fd5b505050506040513d60208110156117e557600080fd5b5051611857565b87600160a060020a0316639b99a8e26040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561182a57600080fd5b505af115801561183e573d6000803e3d6000fd5b505050506040513d602081101561185457600080fd5b50515b9350600092505b8361ffff168361ffff161015611a9157856118f15787600160a060020a03166319b64015846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b1580156118c057600080fd5b505af11580156118d4573d6000803e3d6000fd5b505050506040513d60208110156118ea57600080fd5b505161196b565b87600160a060020a031663d031370b846040518263ffffffff1660e060020a028152600401808261ffff168152602001915050602060405180830381600087803b15801561193e57600080fd5b505af1158015611952573d6000803e3d6000fd5b505050506040513d602081101561196857600080fd5b50515b915081905080600160a060020a03166370a08231896040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050602060405180830381600087803b1580156119cb57600080fd5b505af11580156119df573d6000803e3d6000fd5b505050506040513d60208110156119f557600080fd5b5051604080517f5e35359e000000000000000000000000000000000000000000000000000000008152600160a060020a0384811660048301528a81166024830152604482018490529151929750908a1691635e35359e9160648082019260009290919082900301818387803b158015611a6d57600080fd5b505af1158015611a81573d6000803e3d6000fd5b50506001909401935061185e9050565b5050505050505050565b600080600080600085611b515787600160a060020a0316630e53aae9886040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a0316815260200191505060a060405180830381600087803b158015611b0357600080fd5b505af1158015611b17573d6000803e3d6000fd5b505050506040513d60a0811015611b2d57600080fd5b50805160208201516040830151606084015160809094015192939192909190611bf6565b87600160a060020a031663d66bd524886040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a0316815260200191505060a060405180830381600087803b158015611bac57600080fd5b505af1158015611bc0573d6000803e3d6000fd5b505050506040513d60a0811015611bd657600080fd5b508051602082015160408301516060840151608090940151929391929091905b939c929b50909950975090955093505050505600a165627a7a723058209879fd7ad13e98161c6eaef8c63297b2106dc9f84e3e79e920d34b528ece05060029",
-  "sourceMap": "2993:29:12:-;2894:9840;2993:29;;2894:9840;2993:29;;;;;;;;;;;;;;:::i;:::-;;3754:85;8:9:-1;5:2;;;30:1;27;20:12;5:2;3754:85:12;;;;;;;;;;;;;530:5:45;:18;;538:10;-1:-1:-1;;;;;;530:18:45;;;;;;;3812:8:12;:20;;;;;-1:-1:-1;;;;;3812:20:12;;;;;;;;;2894:9840;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2894:9840:12;;;-1:-1:-1;2894:9840:12;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "2894:9840:12:-;;;;;;;;;-1:-1:-1;;;2894:9840:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;648:77:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;648:77:2;;;;;;;;;;;;;;;;;;;;829:46;;8:9:-1;5:2;;;30:1;27;20:12;5:2;829:46:2;;;;273:62;;8:9:-1;5:2;;;30:1;27;20:12;5:2;273:62:2;;;;2993:29:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2993:29:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2993:29:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;731:75:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;731:75:2;;;;881:54;;8:9:-1;5:2;;;30:1;27;20:12;5:2;881:54:2;;;;510:56;;8:9:-1;5:2;;;30:1;27;20:12;5:2;510:56:2;;;;1152:192:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1152:192:45;;;;;;3029:33:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3029:33:12;;;;;;;;-1:-1:-1;;;;;3029:33:12;;;;;;;;;;;;;;205:62:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;205:62:2;;;;161:20:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:20:45;;;;5040:117:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;5040:117:12;;;;;;;448:56:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;448:56:2;;;;572:70;;8:9:-1;5:2;;;30:1;27;20:12;5:2;572:70:2;;;;256:63:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;256:63:3;;;;4007:104:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4007:104:12;-1:-1:-1;;;;;4007:104:12;;;;;4521:109;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4521:109:12;;;;;957:44:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;957:44:2;;;;1007:61;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1007:61:2;;;;187:23:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;187:23:45;;;;5588:1090:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;5588:1090:12;-1:-1:-1;;;;;5588:1090:12;;;;;;;919:147:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;919:147:45;-1:-1:-1;;;;;919:147:45;;;;;341:80:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;341:80:2;;;;648:77;;;:::o;829:46::-;;;:::o;273:62::-;;;:::o;2993:29:12:-;;;;;;;;;;;;;;-1:-1:-1;;2993:29:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;731:75:2:-;;;:::o;881:54::-;;;:::o;510:56::-;;;:::o;1152:192:45:-;1218:8;;-1:-1:-1;;;;;1218:8:45;1204:10;:22;1196:41;;;;;-1:-1:-1;;;;;1196:41:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;1271:8;;;1264:5;;1252:28;;-1:-1:-1;;;;;1271:8:45;;;;1264:5;;;;1252:28;;;1298:8;;;;1290:16;;-1:-1:-1;;1290:16:45;;;-1:-1:-1;;;;;1298:8:45;;1290:16;;;;1316:21;;;1152:192::o;3029:33:12:-;;;-1:-1:-1;;;;;3029:33:12;;:::o;205:62:2:-;;;:::o;161:20:45:-;;;-1:-1:-1;;;;;161:20:45;;:::o;5040:117:12:-;5091:59;5119:10;5132:17;;;5091:10;:59::i;:::-;5040:117;:::o;448:56:2:-;;;:::o;572:70::-;;;:::o;256:63:3:-;313:6;256:63;:::o;4007:104:12:-;654:5:45;;-1:-1:-1;;;;;654:5:45;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;4084:8:12;:20;;-1:-1:-1;;4084:20:12;-1:-1:-1;;;;;4084:20:12;;;;;;;;;;4007:104::o;4521:109::-;4573:50;4601:10;4614:8;4573:10;:50::i;957:44:2:-;;;:::o;1007:61::-;;;:::o;187:23:45:-;;;-1:-1:-1;;;;;187:23:45;;:::o;5588:1090:12:-;5672:19;;;;;5713:17;;;5709:56;;;5761:4;5744:21;;5709:56;5837:10;5775:73;;5878:9;-1:-1:-1;;;;;5878:15:12;;:17;;;;;-1:-1:-1;;;5878:17:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5878:17:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5878:17:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;5878:17:12;;-1:-1:-1;5905:35:12;5930:9;5905:24;:35::i;:::-;5990:26;6006:9;5990:15;:26::i;:::-;5950:66;;6026:55;6041:9;6052:12;6066:14;6026;:55::i;:::-;6091:42;6109:9;6120:12;6091:17;:42::i;:::-;6143:67;6170:9;6181:12;6195:14;6143:26;:67::i;:::-;6256:9;-1:-1:-1;;;;;6256:15:12;;:17;;;;;-1:-1:-1;;;6256:17:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6256:17:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6256:17:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;6256:17:12;6288:13;;;;;;;;6256:17;;-1:-1:-1;;;;;;6288:35:12;;;;:11;;;;;;:13;;;;;6256:17;;6288:13;;;;;;;;:11;:13;;;5:2:-1;;;;30:1;27;20:12;5:2;6288:13:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6288:13:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;6288:13:12;-1:-1:-1;;;;;6288:35:12;;6284:161;;;6339:9;-1:-1:-1;;;;;6339:32:12;;6372:12;6339:46;;;;;-1:-1:-1;;;6339:46:12;;;;;;;-1:-1:-1;;;;;6339:46:12;-1:-1:-1;;;;;6339:46:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6339:46:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6339:46:12;;;;6399:12;-1:-1:-1;;;;;6399:33:12;;:35;;;;;-1:-1:-1;;;6399:35:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6399:35:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6399:35:12;;;;6284:161;6455:9;-1:-1:-1;;;;;6455:27:12;;6483:9;6455:38;;;;;-1:-1:-1;;;6455:38:12;;;;;;;-1:-1:-1;;;;;6455:38:12;-1:-1:-1;;;;;6455:38:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6455:38:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6455:38:12;;;;6503:12;-1:-1:-1;;;;;6503:30:12;;6534:9;6503:41;;;;;-1:-1:-1;;;6503:41:12;;;;;;;-1:-1:-1;;;;;6503:41:12;-1:-1:-1;;;;;6503:41:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6503:41:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;6503:41:12;;;;6554:12;-1:-1:-1;;;;;6554:31:12;;6586:9;6554:42;;;;;-1:-1:-1;;;6554:42:12;;;;;;;-1:-1:-1;;;;;6554:42:12;-1:-1:-1;;;;;6554:42:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6554:42:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;6612:59:12;;-1:-1:-1;;;;;6612:59:12;;;;-1:-1:-1;6612:59:12;;;-1:-1:-1;6612:59:12;;;;;5588:1090;;;;;;;:::o;919:147:45:-;654:5;;-1:-1:-1;;;;;654:5:45;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013:5;;-1:-1:-1;;;;;1000:18:45;;;1013:5;;1000:18;;992:37;;;;;-1:-1:-1;;;;;992:37:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;1039:8;:20;;-1:-1:-1;;1039:20:45;-1:-1:-1;;;;;1039:20:45;;;;;;;;;;919:147::o;341:80:2:-;;;:::o;7048:180:12:-;7140:13;-1:-1:-1;;;;;7140:29:12;;:31;;;;;-1:-1:-1;;;7140:31:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;7140:31:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;7186:35:12;;7216:4;;-1:-1:-1;;;;;;7186:35:12;;;-1:-1:-1;7186:35:12;;;;;7048:180;:::o;7542:1232::-;7623:24;7659:20;7689:17;7740:23;7809:40;7943:24;8147:34;8375:26;7709:13;-1:-1:-1;;;;;7709:19:12;;:21;;;;;-1:-1:-1;;;7709:21:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;7709:21:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;7709:21:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;7709:21:12;7766:32;;;;;;;;7709:21;;-1:-1:-1;;;;;;7766:30:12;;;;;:32;;;;;7709:21;;7766:32;;;;;;;;;:30;:32;;;5:2:-1;;;;30:1;27;20:12;5:2;7766:32:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;7766:32:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;7766:32:12;7876:8;;:56;;;;;;7895:36;7876:56;;;;;;7766:32;;-1:-1:-1;;;;;;7876:8:12;;;;:18;;:56;;;;;7766:32;;7876:56;;;;;;;;:8;;:56;;;5:2:-1;;;;30:1;27;20:12;5:2;7876:56:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;7876:56:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;7876:56:12;8036:8;;7971:165;;;;;;-1:-1:-1;;;;;7971:165:12;;;;;;;8036:8;;;7971:165;;;;;;;;;;;8036:8;7971:165;;;;;;;;;;;;;;7876:56;;-1:-1:-1;7971:32:12;;;;;;:165;;;;;7876:56;;7971:165;;;;;;;;;;:32;:165;;;5:2:-1;;;;30:1;27;20:12;5:2;7971:165:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;7971:165:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;7971:165:12;8236:27;;;;;;;;7971:165;;-1:-1:-1;7971:165:12;;-1:-1:-1;;;;;;8236:25:12;;;;;:27;;;;;;;;;;;;;;;;:25;:27;;;5:2:-1;;;;30:1;27;20:12;5:2;8236:27:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8236:27:12;;;;8273:9;-1:-1:-1;;;;;8273:26:12;;:28;;;;;-1:-1:-1;;;8273:28:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8273:28:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;8422:8:12;;:49;;;;;;8441:29;8422:49;;;;;;-1:-1:-1;;;;;8422:8:12;;;;-1:-1:-1;8422:18:12;;-1:-1:-1;8422:49:12;;;;;;;;;;;;;;;:8;;:49;;;5:2:-1;;;;30:1;27;20:12;5:2;8422:49:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8422:49:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;8422:49:12;8487:78;;;;;;-1:-1:-1;;;;;8487:78:12;;;;;;;313:6:3;8487:78:12;;;;;;8422:49;;-1:-1:-1;8487:20:12;;;;;;:78;;;;;8422:49;;8487:78;;;;;;;;-1:-1:-1;8487:20:12;:78;;;5:2:-1;;;;30:1;27;20:12;5:2;8487:78:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8487:78:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;8487:78:12;8483:258;;;8593:13;-1:-1:-1;;;;;8593:33:12;;:35;;;;;-1:-1:-1;;;8593:35:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8593:35:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8593:35:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;8593:35:12;;-1:-1:-1;;;;;;8646:23:12;;;8642:88;;8687:9;-1:-1:-1;;;;;8687:32:12;;8720:9;8687:43;;;;;-1:-1:-1;;;8687:43:12;;;;;;;-1:-1:-1;;;;;8687:43:12;-1:-1:-1;;;;;8687:43:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8687:43:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;8687:43:12;;;;8642:88;-1:-1:-1;8758:9:12;7542:1232;-1:-1:-1;;;;;;;7542:1232:12:o;9182:1149::-;9339:22;9371:13;9394:28;9432:18;9460:10;9480:26;9615:8;9673:24;10013:26;9509:16;:90;;9564:13;-1:-1:-1;;;;;9564:33:12;;:35;;;;;-1:-1:-1;;;9564:35:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9564:35:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9564:35:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;9564:35:12;9509:90;;;9528:13;-1:-1:-1;;;;;9528:31:12;;:33;;;;;-1:-1:-1;;;9528:33:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9528:33:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9528:33:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;9528:33:12;9509:90;9480:119;;9626:1;9615:12;;9610:715;9633:19;9629:23;;:1;:23;;;9610:715;;;9700:16;:84;;9752:13;-1:-1:-1;;;;;9752:29:12;;9782:1;9752:32;;;;;-1:-1:-1;;;9752:32:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9752:32:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9752:32:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;9752:32:12;9700:84;;;9719:13;-1:-1:-1;;;;;9719:27:12;;9747:1;9719:30;;;;;-1:-1:-1;;;9719:30:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9719:30:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9719:30:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;9719:30:12;9700:84;9673:111;;9872:126;9903:13;9934:16;9968;9872:13;:126::i;:::-;10085:75;;;;;;-1:-1:-1;;;;;10085:75:12;;;;;;;;;;;;;;;;;;;;;;;9798:200;;-1:-1:-1;9798:200:12;;-1:-1:-1;9798:200:12;;-1:-1:-1;9798:200:12;;-1:-1:-1;9798:200:12;-1:-1:-1;10054:16:12;;-1:-1:-1;10085:26:12;;;;;:75;;;;;-1:-1:-1;;10085:75:12;;;;;;;;-1:-1:-1;10085:26:12;:75;;;5:2:-1;;;;30:1;27;20:12;5:2;10085:75:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;10085:75:12;;;;10179:23;10175:139;;;10220:94;;;;;;-1:-1:-1;;;;;10220:94:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:29;;;;;;:94;;;;;-1:-1:-1;;10220:94:12;;;;;;;;-1:-1:-1;10220:29:12;:94;;;5:2:-1;;;;30:1;27;20:12;5:2;10220:94:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;10220:94:12;;;;10175:139;9654:3;;;;;9610:715;;;9182:1149;;;;;;;;;;;;:::o;10556:239::-;10681:20;10704:13;-1:-1:-1;;;;;10704:27:12;;:29;;;;;-1:-1:-1;;;10704:29:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;10704:29:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;10704:29:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;10704:29:12;10743:45;;;;;;;;;;;;;;;10704:29;;-1:-1:-1;;;;;;10743:30:12;;;;;:45;;;;;-1:-1:-1;;10743:45:12;;;;;;;;-1:-1:-1;10743:30:12;:45;;;5:2:-1;;;;30:1;27;20:12;5:2;10743:45:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;10743:45:12;;;;10556:239;;;:::o;11314:753::-;11483:24;11517:26;11652:8;11710:24;11835:21;11546:16;:90;;11601:13;-1:-1:-1;;;;;11601:33:12;;:35;;;;;-1:-1:-1;;;11601:35:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11601:35:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;11601:35:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;11601:35:12;11546:90;;;11565:13;-1:-1:-1;;;;;11565:31:12;;:33;;;;;-1:-1:-1;;;11565:33:12;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11565:33:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;11565:33:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;11565:33:12;11546:90;11517:119;;11663:1;11652:12;;11647:414;11670:19;11666:23;;:1;:23;;;11647:414;;;11737:16;:84;;11789:13;-1:-1:-1;;;;;11789:29:12;;11819:1;11789:32;;;;;-1:-1:-1;;;11789:32:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11789:32:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;11789:32:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;11789:32:12;11737:84;;;11756:13;-1:-1:-1;;;;;11756:27:12;;11784:1;11756:30;;;;;-1:-1:-1;;;11756:30:12;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11756:30:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;11756:30:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;11756:30:12;11737:84;11710:111;;11871:16;11835:53;;11921:9;-1:-1:-1;;;;;11921:19:12;;11941:13;11921:34;;;;;-1:-1:-1;;;11921:34:12;;;;;;;-1:-1:-1;;;;;11921:34:12;-1:-1:-1;;;;;11921:34:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;11921:34:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;11921:34:12;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;11921:34:12;11969:81;;;;;;-1:-1:-1;;;;;11969:81:12;;;;;;;;;;;;;;;;;;;;;;11921:34;;-1:-1:-1;11969:28:12;;;;;;:81;;;;;-1:-1:-1;;11969:81:12;;;;;;;;-1:-1:-1;11969:28:12;:81;;;5:2:-1;;;;30:1;27;20:12;5:2;11969:81:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;11691:3:12;;;;;-1:-1:-1;11647:414:12;;-1:-1:-1;11647:414:12;;11314:753;;;;;;;;:::o;12374:358::-;12521:22;12545:13;12560:28;12590:18;12610:10;12643:16;:82;;12694:10;-1:-1:-1;;;;;12694:21:12;;12716:8;12694:31;;;;;-1:-1:-1;;;12694:31:12;;;;;;;-1:-1:-1;;;;;12694:31:12;-1:-1:-1;;;;;12694:31:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;12694:31:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;12694:31:12;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;12694:31:12;;;;;;;;;;;;;;;;;;;;;;;;;;12643:82;;;12662:10;-1:-1:-1;;;;;12662:19:12;;12682:8;12662:29;;;;;-1:-1:-1;;;12662:29:12;;;;;;;-1:-1:-1;;;;;12662:29:12;-1:-1:-1;;;;;12662:29:12;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;12662:29:12;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;12662:29:12;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;12662:29:12;;;;;;;;;;;;;;;;;;;;;;;;;;12643:82;12636:89;;;;-1:-1:-1;12636:89:12;;-1:-1:-1;12636:89:12;-1:-1:-1;12636:89:12;;-1:-1:-1;12374:358:12;-1:-1:-1;;;;12374:358:12:o",
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\nimport './interfaces/IBancorConverter.sol';\nimport './interfaces/IBancorConverterUpgrader.sol';\nimport './interfaces/IBancorConverterFactory.sol';\nimport '../utility/Owned.sol';\nimport '../utility/interfaces/IContractRegistry.sol';\nimport '../utility/interfaces/IContractFeatures.sol';\nimport '../utility/interfaces/IWhitelist.sol';\nimport '../ContractIds.sol';\nimport '../FeatureIds.sol';\n\n/*\n    Bancor converter dedicated interface\n*/\ncontract IBancorConverterExtended is IBancorConverter, IOwned {\n    function token() public view returns (ISmartToken) {}\n    function maxConversionFee() public view returns (uint32) {}\n    function conversionFee() public view returns (uint32) {}\n    function connectorTokenCount() public view returns (uint16);\n    function reserveTokenCount() public view returns (uint16);\n    function connectorTokens(uint256 _index) public view returns (IERC20Token) { _index; }\n    function reserveTokens(uint256 _index) public view returns (IERC20Token) { _index; }\n    function setConversionWhitelist(IWhitelist _whitelist) public;\n    function transferTokenOwnership(address _newOwner) public;\n    function withdrawTokens(IERC20Token _token, address _to, uint256 _amount) public;\n    function acceptTokenOwnership() public;\n    function transferManagement(address _newManager) public;\n    function acceptManagement() public;\n    function setConversionFee(uint32 _conversionFee) public;\n    function addConnector(IERC20Token _token, uint32 _weight, bool _enableVirtualBalance) public;\n    function updateConnector(IERC20Token _connectorToken, uint32 _weight, bool _enableVirtualBalance, uint256 _virtualBalance) public;\n    function getConnectorBalance(IERC20Token _connectorToken) public view returns (uint256);\n    function getReserveBalance(IERC20Token _reserveToken) public view returns (uint256);\n    function reserves(address _address) public view returns (\n        uint256 virtualBalance, \n        uint32 weight, \n        bool isVirtualBalanceEnabled, \n        bool isSaleEnabled, \n        bool isSet\n    );\n}\n\n/**\n    @dev Bancor Converter Upgrader\n\n    The Bancor converter upgrader contract allows upgrading an older Bancor converter contract (0.4 and up)\n    to the latest version.\n    To begin the upgrade process, simply execute the 'upgrade' function.\n    At the end of the process, the ownership of the newly upgraded converter will be transferred\n    back to the original owner and the original owner will need to execute the 'acceptOwnership' function.\n    \n    The address of the new converter is available in the ConverterUpgrade event.\n    \n    Note that for older converters that don't yet have the 'upgrade' function, ownership should first\n    be transferred manually to the ConverterUpgrader contract using the 'transferOwnership' function\n    and then the upgrader 'upgrade' function should be executed directly.\n*/\ncontract BancorConverterUpgrader is IBancorConverterUpgrader, Owned, ContractIds, FeatureIds {\n    string public version = '0.3';\n\n    IContractRegistry public registry;                      // contract registry contract address\n\n    /**\n        @dev triggered when the contract accept a converter ownership\n\n        @param _converter   converter address\n        @param _owner       new owner - local upgrader address\n    */\n    event ConverterOwned(address indexed _converter, address indexed _owner);\n\n    /**\n        @dev triggered when the upgrading process is done\n\n        @param _oldConverter    old converter address\n        @param _newConverter    new converter address\n    */\n    event ConverterUpgrade(address indexed _oldConverter, address indexed _newConverter);\n\n    /**\n        @dev initializes a new BancorConverterUpgrader instance\n    */\n    constructor(IContractRegistry _registry) public {\n        registry = _registry;\n    }\n\n    /**\n        @dev allows the owner to update the contract registry contract address\n\n        @param _registry   address of a contract registry contract\n    */\n    function setRegistry(IContractRegistry _registry) public ownerOnly {\n        registry = _registry;\n    }\n\n    /**\n        @dev upgrades an old converter to the latest version\n        will throw if ownership wasn't transferred to the upgrader before calling this function.\n        ownership of the new converter will be transferred back to the original owner.\n        fires the ConverterUpgrade event upon success.\n        can only be called by a converter\n\n        @param _version old converter version\n    */\n    function upgrade(bytes32 _version) public {\n        upgradeOld(IBancorConverter(msg.sender), _version);\n    }\n\n    /**\n        @dev upgrades an old converter to the latest version\n        will throw if ownership wasn't transferred to the upgrader before calling this function.\n        ownership of the new converter will be transferred back to the original owner.\n        fires the ConverterUpgrade event upon success.\n        can only be called by a converter\n\n        @param _version old converter version\n    */\n    function upgrade(uint16 _version) public {\n        upgradeOld(IBancorConverter(msg.sender), bytes32(_version));\n    }\n\n    /**\n        @dev upgrades an old converter to the latest version\n        will throw if ownership wasn't transferred to the upgrader before calling this function.\n        ownership of the new converter will be transferred back to the original owner.\n        fires the ConverterUpgrade event upon success.\n\n        @param _converter   old converter contract address\n        @param _version     old converter version\n    */\n    function upgradeOld(IBancorConverter _converter, bytes32 _version) public {\n        bool formerVersions = false;\n        if (_version == \"0.4\")\n            formerVersions = true;\n        IBancorConverterExtended converter = IBancorConverterExtended(_converter);\n        address prevOwner = converter.owner();\n        acceptConverterOwnership(converter);\n        IBancorConverterExtended newConverter = createConverter(converter);\n        copyConnectors(converter, newConverter, formerVersions);\n        copyConversionFee(converter, newConverter);\n        transferConnectorsBalances(converter, newConverter, formerVersions);                \n        ISmartToken token = converter.token();\n\n        if (token.owner() == address(converter)) {\n            converter.transferTokenOwnership(newConverter);\n            newConverter.acceptTokenOwnership();\n        }\n\n        converter.transferOwnership(prevOwner);\n        newConverter.transferOwnership(prevOwner);\n        newConverter.transferManagement(prevOwner);\n\n        emit ConverterUpgrade(address(converter), address(newConverter));\n    }\n\n    /**\n        @dev the first step when upgrading a converter is to transfer the ownership to the local contract.\n        the upgrader contract then needs to accept the ownership transfer before initiating\n        the upgrade process.\n        fires the ConverterOwned event upon success\n\n        @param _oldConverter       converter to accept ownership of\n    */\n    function acceptConverterOwnership(IBancorConverterExtended _oldConverter) private {\n        _oldConverter.acceptOwnership();\n        emit ConverterOwned(_oldConverter, this);\n    }\n\n    /**\n        @dev creates a new converter with same basic data as the original old converter\n        the newly created converter will have no connectors at this step.\n\n        @param _oldConverter    old converter contract address\n\n        @return the new converter  new converter contract address\n    */\n    function createConverter(IBancorConverterExtended _oldConverter) private returns(IBancorConverterExtended) {\n        IWhitelist whitelist;\n        ISmartToken token = _oldConverter.token();\n        uint32 maxConversionFee = _oldConverter.maxConversionFee();\n\n        IBancorConverterFactory converterFactory = IBancorConverterFactory(registry.addressOf(ContractIds.BANCOR_CONVERTER_FACTORY));\n        address converterAddress  = converterFactory.createConverter(\n            token,\n            registry,\n            maxConversionFee,\n            IERC20Token(address(0)),\n            0\n        );\n\n        IBancorConverterExtended converter = IBancorConverterExtended(converterAddress);\n        converter.acceptOwnership();\n        converter.acceptManagement();\n\n        // get the contract features address from the registry\n        IContractFeatures features = IContractFeatures(registry.addressOf(ContractIds.CONTRACT_FEATURES));\n\n        if (features.isSupported(_oldConverter, FeatureIds.CONVERTER_CONVERSION_WHITELIST)) {\n            whitelist = _oldConverter.conversionWhitelist();\n            if (whitelist != address(0))\n                converter.setConversionWhitelist(whitelist);\n        }\n\n        return converter;\n    }\n\n    /**\n        @dev copies the connectors from the old converter to the new one.\n        note that this will not work for an unlimited number of connectors due to block gas limit constraints.\n\n        @param _oldConverter    old converter contract address\n        @param _newConverter    new converter contract address\n        @param _isLegacyVersion true if the converter version is under 0.5\n    */\n    function copyConnectors(IBancorConverterExtended _oldConverter, IBancorConverterExtended _newConverter, bool _isLegacyVersion)\n        private\n    {\n        uint256 virtualBalance;\n        uint32 weight;\n        bool isVirtualBalanceEnabled;\n        bool isSaleEnabled;\n        bool isSet;\n        uint16 connectorTokenCount = _isLegacyVersion ? _oldConverter.reserveTokenCount() : _oldConverter.connectorTokenCount();\n\n        for (uint16 i = 0; i < connectorTokenCount; i++) {\n            address connectorAddress = _isLegacyVersion ? _oldConverter.reserveTokens(i) : _oldConverter.connectorTokens(i);\n            (virtualBalance, weight, isVirtualBalanceEnabled, isSaleEnabled, isSet) = readConnector(\n                _oldConverter,\n                connectorAddress,\n                _isLegacyVersion\n            );\n\n            IERC20Token connectorToken = IERC20Token(connectorAddress);\n            _newConverter.addConnector(connectorToken, weight, isVirtualBalanceEnabled);\n\n            if (isVirtualBalanceEnabled)\n                _newConverter.updateConnector(connectorToken, weight, isVirtualBalanceEnabled, virtualBalance);\n        }\n    }\n\n    /**\n        @dev copies the conversion fee from the old converter to the new one\n\n        @param _oldConverter    old converter contract address\n        @param _newConverter    new converter contract address\n    */\n    function copyConversionFee(IBancorConverterExtended _oldConverter, IBancorConverterExtended _newConverter) private {\n        uint32 conversionFee = _oldConverter.conversionFee();\n        _newConverter.setConversionFee(conversionFee);\n    }\n\n    /**\n        @dev transfers the balance of each connector in the old converter to the new one.\n        note that the function assumes that the new converter already has the exact same number of\n        also, this will not work for an unlimited number of connectors due to block gas limit constraints.\n\n        @param _oldConverter    old converter contract address\n        @param _newConverter    new converter contract address\n        @param _isLegacyVersion true if the converter version is under 0.5\n    */\n    function transferConnectorsBalances(IBancorConverterExtended _oldConverter, IBancorConverterExtended _newConverter, bool _isLegacyVersion)\n        private\n    {\n        uint256 connectorBalance;\n        uint16 connectorTokenCount = _isLegacyVersion ? _oldConverter.reserveTokenCount() : _oldConverter.connectorTokenCount();\n\n        for (uint16 i = 0; i < connectorTokenCount; i++) {\n            address connectorAddress = _isLegacyVersion ? _oldConverter.reserveTokens(i) : _oldConverter.connectorTokens(i);\n            IERC20Token connector = IERC20Token(connectorAddress);\n            connectorBalance = connector.balanceOf(_oldConverter);\n            _oldConverter.withdrawTokens(connector, address(_newConverter), connectorBalance);\n        }\n    }\n\n    /**\n        @dev returns the connector settings\n\n        @param _converter       old converter contract address\n        @param _address         connector's address to read from\n        @param _isLegacyVersion true if the converter version is under 0.5\n\n        @return connector's settings\n    */\n    function readConnector(IBancorConverterExtended _converter, address _address, bool _isLegacyVersion) \n        private\n        view\n        returns(uint256 virtualBalance, uint32 weight, bool isVirtualBalanceEnabled, bool isSaleEnabled, bool isSet)\n    {\n        return _isLegacyVersion ? _converter.reserves(_address) : _converter.connectors(_address);\n    }\n}\n",
   "sourcePath": "/home/lash/src/ext/sempo/contracts/solidity/contracts/converter/BancorConverterUpgrader.sol",
   "ast": {
@@ -17776,131 +17915,11 @@
     "name": "solc",
     "version": "0.4.26+commit.4563c3fc.Emscripten.clang"
   },
-  "networks": {
-    "1582404769170": {
-      "events": {},
-      "links": {},
-      "address": "0x73fcAC57a9Fe5e73FbCb957f3d17B5d8C5d83Fe1",
-      "transactionHash": "0x157ed209afcbcdea4141ab64de80d52e5418680fc0db701b63bde549abd8858b"
-    },
-    "1582456089442": {
-      "events": {},
-      "links": {},
-      "address": "0x6726173f4D6A98629ba890fEFBC0D5Cacea1f0bE",
-      "transactionHash": "0x452e0c3f97289654ad383b243a887fcde4d696633b435eb81408ca077f5353ca"
-    },
-    "1582458391292": {
-      "events": {},
-      "links": {},
-      "address": "0x77eceaa4f3D2611Aa1598e59716460628d5Bc754",
-      "transactionHash": "0xbe77652af5b903b47d688b6f50d1b284bfab3c143964ffda02007a9e620d40ba"
-    },
-    "1582459403367": {
-      "events": {},
-      "links": {},
-      "address": "0x0088a931082F033F850DCADffbF161FDab47bea2",
-      "transactionHash": "0x9e7837260869032891c7851cfd5eae1afa9d8c941132aae36d2a2da5b8c67843"
-    },
-    "1582460707764": {
-      "events": {},
-      "links": {},
-      "address": "0x484447D0F29789772Ff5a9c5dE1701c6a6807176",
-      "transactionHash": "0x11ca6aa4951dcdeb3f1ed991a3a2c0e419f2c07e38046cdf46954b4503151e47"
-    },
-    "1582522430391": {
-      "events": {},
-      "links": {},
-      "address": "0xdc8Cd1aB5CfC4EF063a4d6c46d9d9E0667E5230B",
-      "transactionHash": "0x3a1c68103808aaab1f8e6816ea9d0307b659bb0b917e4e34bffaa0ba2dc296a6"
-    },
-    "1582523476135": {
-      "events": {},
-      "links": {},
-      "address": "0xd49BA101025435141e87c822574fC907b0d2791C",
-      "transactionHash": "0x189758b4897e7c16fd5ef0511657eabe27bf0c707d4d09127326e21a36c8dc93"
-    },
-    "1582523613565": {
-      "events": {},
-      "links": {},
-      "address": "0xe453274E2Ce324b516e0Ec254018FF9563CCB113",
-      "transactionHash": "0x06df11e96e669d850e61d6d952ea0baaeeb71d7df1e8f2daff3eb2c8434516b6"
-    },
-    "1582525850712": {
-      "events": {},
-      "links": {},
-      "address": "0x8fb694cA07f292E22B2f19D19400589b6864cf56",
-      "transactionHash": "0x17cf4635135c3290d440e6a0c1f30266f5772d1c9f46dc24c179f1030ec92ff0"
-    },
-    "1582525895722": {
-      "events": {},
-      "links": {},
-      "address": "0x018D7f3c10E5F5d75153E1573876546397d84B2B",
-      "transactionHash": "0x6a1ffdc3dae8004294066a9f98ff08f829bf5a99f65b37b80a4ceb2fbd7550fd"
-    },
-    "1582525982751": {
-      "events": {},
-      "links": {},
-      "address": "0x64C0d101271411d252a8875C67bDCc46026A7141",
-      "transactionHash": "0xe43b7b7ebd05fa840e426fe3cb3e3af1be4e9ac38d4ab41b4029695c694c221a"
-    },
-    "1582620310720": {
-      "events": {},
-      "links": {},
-      "address": "0x7917a3814D376810784776ecCeBA937a9392dc8D",
-      "transactionHash": "0xf67a6cc0e31974cc54656ee8f515b4e6324f9fecad3f898f0be08efed2eebd71"
-    },
-    "1582694284480": {
-      "events": {},
-      "links": {},
-      "address": "0xBDB3b7FD20fA492aEc549EB4C0BEa4fB7a90a8a6",
-      "transactionHash": "0x99ac1dff657e145ebf0865a3139aaf5af996f1369c7b3b4ffb7491d18d0c5392"
-    },
-    "1582699013057": {
-      "events": {},
-      "links": {},
-      "address": "0x80DD1037eE7b65023a84546719c0a0585ed91630",
-      "transactionHash": "0x341c5e907a70d15e97bdb41a26adc2b8e9934d89eeea3c2215b25fb6dce436a1"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2020-02-26T09:32:34.151Z",
+  "updatedAt": "2020-02-26T09:32:34.161Z",
   "devdoc": {
-    "methods": {
-      "acceptOwnership()": {
-        "details": "used by a new owner to accept an ownership transfer"
-      },
-      "setRegistry(address)": {
-        "details": "allows the owner to update the contract registry contract address",
-        "params": {
-          "_registry": "address of a contract registry contract"
-        }
-      },
-      "transferOwnership(address)": {
-        "details": "allows transferring the contract ownership the new owner still needs to accept the transfer can only be called by the contract owner",
-        "params": {
-          "_newOwner": "new contract owner"
-        }
-      },
-      "upgrade(bytes32)": {
-        "details": "upgrades an old converter to the latest version will throw if ownership wasn't transferred to the upgrader before calling this function. ownership of the new converter will be transferred back to the original owner. fires the ConverterUpgrade event upon success. can only be called by a converter",
-        "params": {
-          "_version": "old converter version"
-        }
-      },
-      "upgrade(uint16)": {
-        "details": "upgrades an old converter to the latest version will throw if ownership wasn't transferred to the upgrader before calling this function. ownership of the new converter will be transferred back to the original owner. fires the ConverterUpgrade event upon success. can only be called by a converter",
-        "params": {
-          "_version": "old converter version"
-        }
-      },
-      "upgradeOld(address,bytes32)": {
-        "details": "upgrades an old converter to the latest version will throw if ownership wasn't transferred to the upgrader before calling this function. ownership of the new converter will be transferred back to the original owner. fires the ConverterUpgrade event upon success.",
-        "params": {
-          "_converter": "old converter contract address",
-          "_version": "old converter version"
-        }
-      }
-    }
+    "methods": {}
   },
   "userdoc": {
     "methods": {}

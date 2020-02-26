@@ -240,12 +240,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_index\",\"type\":\"uint32\"}],\"name\":\"unregisterConverter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"tokens\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_index\",\"type\":\"uint32\"}],\"name\":\"converterAddress\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_converter\",\"type\":\"address\"}],\"name\":\"tokenAddress\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"tokenCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"converterCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_converter\",\"type\":\"address\"}],\"name\":\"registerConverter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"newOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_token\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"ConverterAddition\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_token\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"ConverterRemoval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_prevOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"OwnerUpdate\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"acceptOwnership()\":{\"details\":\"used by a new owner to accept an ownership transfer\"},\"converterAddress(address,uint32)\":{\"details\":\"returns the converter address associated with the given token or zero address if no such converter exists\",\"params\":{\"_index\":\"converter index\",\"_token\":\"token address\"},\"return\":\"converter address\"},\"converterCount(address)\":{\"details\":\"returns the number of converters associated with the given token or 0 if the token isn't registered\",\"params\":{\"_token\":\"token address\"},\"return\":\"number of converters\"},\"registerConverter(address,address)\":{\"details\":\"adds a new converter address for a given token to the registry throws if the converter is already registered\",\"params\":{\"_converter\":\"converter address\",\"_token\":\"token address\"}},\"tokenAddress(address)\":{\"details\":\"returns the token address associated with the given converter or zero address if no such converter exists\",\"params\":{\"_converter\":\"converter address\"},\"return\":\"token address\"},\"tokenCount()\":{\"details\":\"returns the number of tokens in the registry\",\"return\":\"number of tokens\"},\"transferOwnership(address)\":{\"details\":\"allows transferring the contract ownership the new owner still needs to accept the transfer can only be called by the contract owner\",\"params\":{\"_newOwner\":\"new contract owner\"}},\"unregisterConverter(address,uint32)\":{\"details\":\"removes an existing converter from the registry note that the function doesn't scale and might be needed to be called multiple times when removing an older converter from a large converter list\",\"params\":{\"_index\":\"converter index\",\"_token\":\"token address\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/lash/src/ext/sempo/contracts/solidity/contracts/BancorConverterRegistry.sol\":\"BancorConverterRegistry\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/lash/src/ext/sempo/contracts/solidity/contracts/BancorConverterRegistry.sol\":{\"keccak256\":\"0xa29c1741ae5b2e9c4102795e0524e393020782079273fef1133f8191e02af022\",\"urls\":[\"bzzr://17f8cffe09344e976a6e9841b990e9d76c47894840acdc3a8e46bbf7322a777c\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/Owned.sol\":{\"keccak256\":\"0x6dfc01f2fffb26808d90af1adc2c9599ca5f2d3f72a0552f450ae9f56e8ec219\",\"urls\":[\"bzzr://2cda558f07fb4d9590537d8c3b19cf773c106922bcb4d5abe83a6a89d38e16b5\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/Utils.sol\":{\"keccak256\":\"0x20fd0e3bec89438f0fad996fa39d38521be8ca847c05c67e25cad8e12660f7a1\",\"urls\":[\"bzzr://05aee49ac97fdff3e10a7df474b8ccf63bd4b596783dbe270ac3d9e0d5a63205\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/interfaces/IOwned.sol\":{\"keccak256\":\"0x3bfadfd06a9f37a8687474694252513f00d84ff9074c9d3c69c311d62686e588\",\"urls\":[\"bzzr://b168ba3d91c3119b53b54679bec05592fe124e42f2345e785a4fd08c8225b39e\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060008054600160a060020a03191633179055610b1b806100326000396000f3006080604052600436106100ae5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166338cb066f81146100b35780634f64b2be146100df57806379ba5097146101135780638da5cb5b1461012857806390ab31061461013d5780639884e801146101675780639f181b5e14610188578063cd9d4d66146101af578063d26a8d2e146101d0578063d4ee1d90146101f7578063f2fde38b1461020c575b600080fd5b3480156100bf57600080fd5b506100dd600160a060020a036004351663ffffffff6024351661022d565b005b3480156100eb57600080fd5b506100f7600435610521565b60408051600160a060020a039092168252519081900360200190f35b34801561011f57600080fd5b506100dd610549565b34801561013457600080fd5b506100f761061c565b34801561014957600080fd5b506100f7600160a060020a036004351663ffffffff6024351661062b565b34801561017357600080fd5b506100f7600160a060020a03600435166106a0565b34801561019457600080fd5b5061019d6106be565b60408051918252519081900360200190f35b3480156101bb57600080fd5b5061019d600160a060020a03600435166106c5565b3480156101dc57600080fd5b506100dd600160a060020a03600435811690602435166106e0565b34801561020357600080fd5b506100f76109a2565b34801561021857600080fd5b506100dd600160a060020a03600435166109b1565b600080548190600160a060020a03163314610292576040805160e560020a62461bcd02815260206004820152600660248201527f6132333530370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b83600160a060020a03811615156102f3576040805160e560020a62461bcd02815260206004820152600660248201527f3837633937330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03851660009081526003602052604090205463ffffffff851610610368576040805160e560020a62461bcd02815260206004820152600660248201527f6536663036370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a0385166000908152600360205260409020805463ffffffff861690811061039257fe5b600091825260209091200154600160a060020a031692506001840191505b600160a060020a03851660009081526003602052604090205463ffffffff8316101561048357600160a060020a0385166000908152600360205260409020805463ffffffff841690811061040057fe5b6000918252602080832090910154600160a060020a03888116845260039092526040909220805491909216919063ffffffff60001986011690811061044157fe5b6000918252602090912001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055600191909101906103b0565b600160a060020a03851660009081526003602052604090208054906104ac906000198301610aa8565b50600160a060020a03808416600081815260046020908152604091829020805473ffffffffffffffffffffffffffffffffffffffff1916905581519283529051928816927fc3b25a6c3b7509edde0f2e6cc317b5820a901fa82ac554709206e1d7237fe2949281900390910190a25050505050565b600580548290811061052f57fe5b600091825260209091200154600160a060020a0316905081565b600154600160a060020a031633146105ab576040805160e560020a62461bcd02815260206004820152600660248201527f6636663630300000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600160a060020a03821660009081526003602052604081205463ffffffff8316106106585750600061069a565b600160a060020a0383166000908152600360205260409020805463ffffffff841690811061068257fe5b600091825260209091200154600160a060020a031690505b92915050565b600160a060020a039081166000908152600460205260409020541690565b6005545b90565b600160a060020a031660009081526003602052604090205490565b600054600160a060020a03163314610742576040805160e560020a62461bcd02815260206004820152600660248201527f6132333530370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a03811615156107a3576040805160e560020a62461bcd02815260206004820152600660248201527f3837633937330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a0381161515610804576040805160e560020a62461bcd02815260206004820152600660248201527f3837633937330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a038381166000908152600460205260409020541615610874576040805160e560020a62461bcd02815260206004820152600660248201527f6534326166320000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03841660009081526002602052604090205460ff161515610907576005805460018082019092557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0387169081179091556000908152600260205260409020805460ff191690911790555b600160a060020a038085166000818152600360209081526040808320805460018101825590845282842001805495891673ffffffffffffffffffffffffffffffffffffffff1996871681179091558084526004835292819020805490951684179094558351918252925191927f229aec2ec4b21e700d6daf13a894e7b38c18b844b021f2eee263f04af3ea6f0092918290030190a250505050565b600154600160a060020a031681565b600054600160a060020a03163314610a13576040805160e560020a62461bcd02815260206004820152600660248201527f6132333530370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600054600160a060020a0382811691161415610a79576040805160e560020a62461bcd02815260206004820152600660248201527f6466376430320000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b815481835581811115610acc57600083815260209020610acc918101908301610ad1565b505050565b6106c291905b80821115610aeb5760008155600101610ad7565b50905600a165627a7a7230582068a2bada7dee7bfd270b255707cb1c4189daeaba9a3645ca65b69c07ab01a89e0029",
-  "deployedBytecode": "0x6080604052600436106100ae5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166338cb066f81146100b35780634f64b2be146100df57806379ba5097146101135780638da5cb5b1461012857806390ab31061461013d5780639884e801146101675780639f181b5e14610188578063cd9d4d66146101af578063d26a8d2e146101d0578063d4ee1d90146101f7578063f2fde38b1461020c575b600080fd5b3480156100bf57600080fd5b506100dd600160a060020a036004351663ffffffff6024351661022d565b005b3480156100eb57600080fd5b506100f7600435610521565b60408051600160a060020a039092168252519081900360200190f35b34801561011f57600080fd5b506100dd610549565b34801561013457600080fd5b506100f761061c565b34801561014957600080fd5b506100f7600160a060020a036004351663ffffffff6024351661062b565b34801561017357600080fd5b506100f7600160a060020a03600435166106a0565b34801561019457600080fd5b5061019d6106be565b60408051918252519081900360200190f35b3480156101bb57600080fd5b5061019d600160a060020a03600435166106c5565b3480156101dc57600080fd5b506100dd600160a060020a03600435811690602435166106e0565b34801561020357600080fd5b506100f76109a2565b34801561021857600080fd5b506100dd600160a060020a03600435166109b1565b600080548190600160a060020a03163314610292576040805160e560020a62461bcd02815260206004820152600660248201527f6132333530370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b83600160a060020a03811615156102f3576040805160e560020a62461bcd02815260206004820152600660248201527f3837633937330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03851660009081526003602052604090205463ffffffff851610610368576040805160e560020a62461bcd02815260206004820152600660248201527f6536663036370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a0385166000908152600360205260409020805463ffffffff861690811061039257fe5b600091825260209091200154600160a060020a031692506001840191505b600160a060020a03851660009081526003602052604090205463ffffffff8316101561048357600160a060020a0385166000908152600360205260409020805463ffffffff841690811061040057fe5b6000918252602080832090910154600160a060020a03888116845260039092526040909220805491909216919063ffffffff60001986011690811061044157fe5b6000918252602090912001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055600191909101906103b0565b600160a060020a03851660009081526003602052604090208054906104ac906000198301610aa8565b50600160a060020a03808416600081815260046020908152604091829020805473ffffffffffffffffffffffffffffffffffffffff1916905581519283529051928816927fc3b25a6c3b7509edde0f2e6cc317b5820a901fa82ac554709206e1d7237fe2949281900390910190a25050505050565b600580548290811061052f57fe5b600091825260209091200154600160a060020a0316905081565b600154600160a060020a031633146105ab576040805160e560020a62461bcd02815260206004820152600660248201527f6636663630300000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600160a060020a03821660009081526003602052604081205463ffffffff8316106106585750600061069a565b600160a060020a0383166000908152600360205260409020805463ffffffff841690811061068257fe5b600091825260209091200154600160a060020a031690505b92915050565b600160a060020a039081166000908152600460205260409020541690565b6005545b90565b600160a060020a031660009081526003602052604090205490565b600054600160a060020a03163314610742576040805160e560020a62461bcd02815260206004820152600660248201527f6132333530370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a03811615156107a3576040805160e560020a62461bcd02815260206004820152600660248201527f3837633937330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a0381161515610804576040805160e560020a62461bcd02815260206004820152600660248201527f3837633937330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a038381166000908152600460205260409020541615610874576040805160e560020a62461bcd02815260206004820152600660248201527f6534326166320000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03841660009081526002602052604090205460ff161515610907576005805460018082019092557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0387169081179091556000908152600260205260409020805460ff191690911790555b600160a060020a038085166000818152600360209081526040808320805460018101825590845282842001805495891673ffffffffffffffffffffffffffffffffffffffff1996871681179091558084526004835292819020805490951684179094558351918252925191927f229aec2ec4b21e700d6daf13a894e7b38c18b844b021f2eee263f04af3ea6f0092918290030190a250505050565b600154600160a060020a031681565b600054600160a060020a03163314610a13576040805160e560020a62461bcd02815260206004820152600660248201527f6132333530370000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600054600160a060020a0382811691161415610a79576040805160e560020a62461bcd02815260206004820152600660248201527f6466376430320000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b815481835581811115610acc57600083815260209020610acc918101908301610ad1565b505050565b6106c291905b80821115610aeb5760008155600101610ad7565b50905600a165627a7a7230582068a2bada7dee7bfd270b255707cb1c4189daeaba9a3645ca65b69c07ab01a89e0029",
-  "sourceMap": "546:4423:0:-;;;1521:28;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;530:5:44;:18;;-1:-1:-1;;;;;;530:18:44;538:10;530:18;;;546:4423:0;;;;;;",
-  "deployedSourceMap": "546:4423:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4132:835;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4132:835:0;-1:-1:-1;;;;;4132:835:0;;;;;;;;;;;909:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;909:23:0;;;;;;;;;-1:-1:-1;;;;;909:23:0;;;;;;;;;;;;;;1152:192:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1152:192:44;;;;161:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:20:44;;;;2359:234:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2359:234:0;-1:-1:-1;;;;;2359:234:0;;;;;;;;;2819:126;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2819:126:0;-1:-1:-1;;;;;2819:126:0;;;;;1662:89;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1662:89:0;;;;;;;;;;;;;;;;;;;;1970:127;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1970:127:0;-1:-1:-1;;;;;1970:127:0;;;;;3185:624;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3185:624:0;-1:-1:-1;;;;;3185:624:0;;;;;;;;;;187:23:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;187:23:44;;;;919:147;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;919:147:44;-1:-1:-1;;;;;919:147:44;;;;;4132:835:0;4340:17;654:5:44;;4340:17:0;;-1:-1:-1;;;;;654:5:44;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;4246:6:0;-1:-1:-1;;;;;448:22:47;;;;440:41;;;;;-1:-1:-1;;;;;440:41:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4285:26:0;;;;;;:18;:26;;;;;:33;4276:42;;;;4268:61;;;;;-1:-1:-1;;;;;4268:61:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4360:26:0;;;;;;:18;:26;;;;;:34;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4360:34:0;;-1:-1:-1;4360:34:0;4475:10;;;-1:-1:-1;4459:162:0;-1:-1:-1;;;;;4491:26:0;;;;;;:18;:26;;;;;:33;4487:37;;;;4459:162;;;-1:-1:-1;;;;;4581:26:0;;;;;;:18;:26;;;;;:29;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4545:26:0;;;;;:18;:26;;;;;;;:33;;4581:29;;;;;4545:26;:33;-1:-1:-1;;4572:5:0;;4545:33;;;;;;;;;;;;;;;;;:65;;-1:-1:-1;;4545:65:0;-1:-1:-1;;;;;4545:65:0;;;;;;;;;;-1:-1:-1;4526:3:0;;;;;4459:162;;;-1:-1:-1;;;;;4703:26:0;;;;;;:18;:26;;;;;:35;;;;;-1:-1:-1;;4703:35:0;;;:::i;:::-;-1:-1:-1;;;;;;4832:29:0;;;;;;;:18;:29;;;;;;;;;4825:36;;-1:-1:-1;;4825:36:0;;;4925:35;;;;;;;;;;;;;;;;;;;;;680:1:44;4132:835:0;;;;:::o;909:23::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;909:23:0;;-1:-1:-1;909:23:0;:::o;1152:192:44:-;1218:8;;-1:-1:-1;;;;;1218:8:44;1204:10;:22;1196:41;;;;;-1:-1:-1;;;;;1196:41:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;1271:8;;;1264:5;;1252:28;;-1:-1:-1;;;;;1271:8:44;;;;1264:5;;;;1252:28;;;1298:8;;;;1290:16;;-1:-1:-1;;1290:16:44;;;-1:-1:-1;;;;;1298:8:44;;1290:16;;;;1316:21;;;1152:192::o;161:20::-;;;-1:-1:-1;;;;;161:20:44;;:::o;2359:234:0:-;-1:-1:-1;;;;;2470:26:0;;2437:7;2470:26;;;:18;:26;;;;;:33;2460:43;;;;2456:78;;-1:-1:-1;2532:1:0;2517:17;;2456:78;-1:-1:-1;;;;;2552:26:0;;;;;;:18;:26;;;;;:34;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2552:34:0;;-1:-1:-1;2359:234:0;;;;;:::o;2819:126::-;-1:-1:-1;;;;;2908:30:0;;;2882:7;2908:30;;;:18;:30;;;;;;;;2819:126::o;1662:89::-;1731:6;:13;1662:89;;:::o;1970:127::-;-1:-1:-1;;;;;2057:26:0;2031:7;2057:26;;;:18;:26;;;;;:33;;1970:127::o;3185:624::-;654:5:44;;-1:-1:-1;;;;;654:5:44;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;3302:6:0;-1:-1:-1;;;;;448:22:47;;;;440:41;;;;;-1:-1:-1;;;;;440:41:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;3331:10:0;-1:-1:-1;;;;;448:22:47;;;;440:41;;;;;-1:-1:-1;;;;;440:41:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3365:30:0;;;3407:1;3365:30;;;:18;:30;;;;;;;:44;3357:63;;;;;-1:-1:-1;;;;;3357:63:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3483:24:0;;;;;;:16;:24;;;;;;;;3482:25;3478:120;;;3523:6;27:10:-1;;39:1;23:18;;;45:23;;;3523:19:0;;;;-1:-1:-1;;3523:19:0;-1:-1:-1;;;;;3523:19:0;;;;;;;;-1:-1:-1;3556:24:0;;;:16;3523:19;3556:24;;;;:31;;-1:-1:-1;;3556:31:0;;;;;;3478:120;-1:-1:-1;;;;;3608:26:0;;;;;;;:18;:26;;;;;;;;27:10:-1;;39:1;23:18;;45:23;;3608:43:0;;;;;;;;;;;;-1:-1:-1;;3608:43:0;;;;;;;;3661:30;;;:18;:30;;;;;;:39;;;;;;;;;;3765:37;;;;;;;3608:26;;3765:37;;;;;;;;;491:1:47;680::44;3185:624:0;;:::o;187:23:44:-;;;-1:-1:-1;;;;;187:23:44;;:::o;919:147::-;654:5;;-1:-1:-1;;;;;654:5:44;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013:5;;-1:-1:-1;;;;;1000:18:44;;;1013:5;;1000:18;;992:37;;;;;-1:-1:-1;;;;;992:37:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;1039:8;:20;;-1:-1:-1;;1039:20:44;-1:-1:-1;;;;;1039:20:44;;;;;;;;;;919:147::o;546:4423:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;",
-  "source": "pragma solidity ^0.4.24;\nimport './utility/Owned.sol';\nimport './utility/Utils.sol';\n\n/**\n    @dev Bancor Converter Registry\n\n    The Bancor Converter Registry keeps converter addresses by token addresses and vice versa. The owner can update converter addresses so that the token address always points to the updated list of converters for each token. \n\n    The contract is also able to iterate through all the tokens in the network. \n\n    Note that converter addresses for each token are returned in ascending order (from oldest to newest).\n\n*/\ncontract BancorConverterRegistry is Owned, Utils {\n    mapping (address => bool) private tokensRegistered;         // token address -> registered or not\n    mapping (address => address[]) private tokensToConverters;  // token address -> converter addresses\n    mapping (address => address) private convertersToTokens;    // converter address -> token address\n    address[] public tokens;                                    // list of all token addresses\n\n    /**\n        @dev triggered when a converter is added to the registry\n\n        @param _token   token\n        @param _address converter\n    */\n    event ConverterAddition(address indexed _token, address _address);\n\n    /**\n        @dev triggered when a converter is removed from the registry\n\n        @param _token   token\n        @param _address converter\n    */\n    event ConverterRemoval(address indexed _token, address _address);\n\n    /**\n        @dev initializes a new BancorConverterRegistry instance\n    */\n    constructor() public {\n    }\n\n    /**\n        @dev returns the number of tokens in the registry\n\n        @return number of tokens\n    */\n    function tokenCount() public view returns (uint256) {\n        return tokens.length;\n    }\n\n    /**\n        @dev returns the number of converters associated with the given token\n        or 0 if the token isn't registered\n\n        @param _token   token address\n\n        @return number of converters\n    */\n    function converterCount(address _token) public view returns (uint256) {\n        return tokensToConverters[_token].length;\n    }\n\n    /**\n        @dev returns the converter address associated with the given token\n        or zero address if no such converter exists\n\n        @param _token   token address\n        @param _index   converter index\n\n        @return converter address\n    */\n    function converterAddress(address _token, uint32 _index) public view returns (address) {\n        if (_index >= tokensToConverters[_token].length)\n            return address(0);\n\n        return tokensToConverters[_token][_index];\n    }\n\n    /**\n        @dev returns the token address associated with the given converter\n        or zero address if no such converter exists\n\n        @param _converter   converter address\n\n        @return token address\n    */\n    function tokenAddress(address _converter) public view returns (address) {\n        return convertersToTokens[_converter];\n    }\n\n    /**\n        @dev adds a new converter address for a given token to the registry\n        throws if the converter is already registered\n\n        @param _token       token address\n        @param _converter   converter address\n    */\n    function registerConverter(address _token, address _converter)\n        public\n        ownerOnly\n        validAddress(_token)\n        validAddress(_converter)\n    {\n        require(convertersToTokens[_converter] == address(0), 'e42af2');\n\n        // add the token to the list of tokens\n        if (!tokensRegistered[_token]) {\n            tokens.push(_token);\n            tokensRegistered[_token] = true;\n        }\n\n        tokensToConverters[_token].push(_converter);\n        convertersToTokens[_converter] = _token;\n\n        // dispatch the converter addition event\n        emit ConverterAddition(_token, _converter);\n    }\n\n    /**\n        @dev removes an existing converter from the registry\n        note that the function doesn't scale and might be needed to be called\n        multiple times when removing an older converter from a large converter list\n\n        @param _token   token address\n        @param _index   converter index\n    */\n    function unregisterConverter(address _token, uint32 _index)\n        public\n        ownerOnly\n        validAddress(_token)\n    {\n        require(_index < tokensToConverters[_token].length, 'e6f067');\n\n        address converter = tokensToConverters[_token][_index];\n\n        // move all newer converters 1 position lower\n        for (uint32 i = _index + 1; i < tokensToConverters[_token].length; i++) {\n            tokensToConverters[_token][i - 1] = tokensToConverters[_token][i];\n        }\n\n        // decrease the number of converters defined for the token by 1\n        tokensToConverters[_token].length--;\n        \n        // removes the converter from the converters -> tokens list\n        delete convertersToTokens[converter];\n\n        // dispatch the converter removal event\n        emit ConverterRemoval(_token, converter);\n    }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_index\",\"type\":\"uint32\"}],\"name\":\"unregisterConverter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"tokens\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_index\",\"type\":\"uint32\"}],\"name\":\"converterAddress\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_converter\",\"type\":\"address\"}],\"name\":\"tokenAddress\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"tokenCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"converterCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_token\",\"type\":\"address\"},{\"name\":\"_converter\",\"type\":\"address\"}],\"name\":\"registerConverter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"newOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_token\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"ConverterAddition\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_token\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"ConverterRemoval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_prevOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"OwnerUpdate\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"acceptOwnership()\":{\"details\":\"used by a new owner to accept an ownership transfer\"},\"converterAddress(address,uint32)\":{\"details\":\"returns the converter address associated with the given token or zero address if no such converter exists\",\"params\":{\"_index\":\"converter index\",\"_token\":\"token address\"},\"return\":\"converter address\"},\"converterCount(address)\":{\"details\":\"returns the number of converters associated with the given token or 0 if the token isn't registered\",\"params\":{\"_token\":\"token address\"},\"return\":\"number of converters\"},\"registerConverter(address,address)\":{\"details\":\"adds a new converter address for a given token to the registry throws if the converter is already registered\",\"params\":{\"_converter\":\"converter address\",\"_token\":\"token address\"}},\"tokenAddress(address)\":{\"details\":\"returns the token address associated with the given converter or zero address if no such converter exists\",\"params\":{\"_converter\":\"converter address\"},\"return\":\"token address\"},\"tokenCount()\":{\"details\":\"returns the number of tokens in the registry\",\"return\":\"number of tokens\"},\"transferOwnership(address)\":{\"details\":\"allows transferring the contract ownership the new owner still needs to accept the transfer can only be called by the contract owner\",\"params\":{\"_newOwner\":\"new contract owner\"}},\"unregisterConverter(address,uint32)\":{\"details\":\"removes an existing converter from the registry note that the function doesn't scale and might be needed to be called multiple times when removing an older converter from a large converter list\",\"params\":{\"_index\":\"converter index\",\"_token\":\"token address\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/lash/src/ext/sempo/contracts/solidity/contracts/BancorConverterRegistry.sol\":\"BancorConverterRegistry\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/lash/src/ext/sempo/contracts/solidity/contracts/BancorConverterRegistry.sol\":{\"keccak256\":\"0xaecc30b077d043b055c755d9abcf7d8acfdb66bfbd7f6b364eda91f0516eee63\",\"urls\":[\"bzzr://413adcfc72e7f600e023c5a898b2bf12b148ec6bd3825f8f86d8c8d500b175d9\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/Owned.sol\":{\"keccak256\":\"0x78745ba2880b46edbd793166c7248b8ed9741189fbafb7ecc4fc83423140c415\",\"urls\":[\"bzzr://5c16b883804782ae67dcca47fcf7ec6564f109c6d165688ca4587d8723f570be\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/Utils.sol\":{\"keccak256\":\"0xaf0ba65db834ee52fc7ce5e654c42cb78806d6bc601c77218ea19d645bf35932\",\"urls\":[\"bzzr://ac1ed230a49ff26f19ac337673b13805348237e5cc51c92666c73435823bc4d6\"]},\"/home/lash/src/ext/sempo/contracts/solidity/contracts/utility/interfaces/IOwned.sol\":{\"keccak256\":\"0x3bfadfd06a9f37a8687474694252513f00d84ff9074c9d3c69c311d62686e588\",\"urls\":[\"bzzr://b168ba3d91c3119b53b54679bec05592fe124e42f2345e785a4fd08c8225b39e\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060008054600160a060020a03191633179055610b1b806100326000396000f3006080604052600436106100ae5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166338cb066f81146100b35780634f64b2be146100df57806379ba5097146101135780638da5cb5b1461012857806390ab31061461013d5780639884e801146101675780639f181b5e14610188578063cd9d4d66146101af578063d26a8d2e146101d0578063d4ee1d90146101f7578063f2fde38b1461020c575b600080fd5b3480156100bf57600080fd5b506100dd600160a060020a036004351663ffffffff6024351661022d565b005b3480156100eb57600080fd5b506100f7600435610521565b60408051600160a060020a039092168252519081900360200190f35b34801561011f57600080fd5b506100dd610549565b34801561013457600080fd5b506100f761061c565b34801561014957600080fd5b506100f7600160a060020a036004351663ffffffff6024351661062b565b34801561017357600080fd5b506100f7600160a060020a03600435166106a0565b34801561019457600080fd5b5061019d6106be565b60408051918252519081900360200190f35b3480156101bb57600080fd5b5061019d600160a060020a03600435166106c5565b3480156101dc57600080fd5b506100dd600160a060020a03600435811690602435166106e0565b34801561020357600080fd5b506100f76109a2565b34801561021857600080fd5b506100dd600160a060020a03600435166109b1565b600080548190600160a060020a03163314610292576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b83600160a060020a03811615156102f3576040805160e560020a62461bcd02815260206004820152600660248201527f3335373839660000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03851660009081526003602052604090205463ffffffff851610610368576040805160e560020a62461bcd02815260206004820152600660248201527f3934616562630000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a0385166000908152600360205260409020805463ffffffff861690811061039257fe5b600091825260209091200154600160a060020a031692506001840191505b600160a060020a03851660009081526003602052604090205463ffffffff8316101561048357600160a060020a0385166000908152600360205260409020805463ffffffff841690811061040057fe5b6000918252602080832090910154600160a060020a03888116845260039092526040909220805491909216919063ffffffff60001986011690811061044157fe5b6000918252602090912001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055600191909101906103b0565b600160a060020a03851660009081526003602052604090208054906104ac906000198301610aa8565b50600160a060020a03808416600081815260046020908152604091829020805473ffffffffffffffffffffffffffffffffffffffff1916905581519283529051928816927fc3b25a6c3b7509edde0f2e6cc317b5820a901fa82ac554709206e1d7237fe2949281900390910190a25050505050565b600580548290811061052f57fe5b600091825260209091200154600160a060020a0316905081565b600154600160a060020a031633146105ab576040805160e560020a62461bcd02815260206004820152600660248201527f6639373561650000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600160a060020a03821660009081526003602052604081205463ffffffff8316106106585750600061069a565b600160a060020a0383166000908152600360205260409020805463ffffffff841690811061068257fe5b600091825260209091200154600160a060020a031690505b92915050565b600160a060020a039081166000908152600460205260409020541690565b6005545b90565b600160a060020a031660009081526003602052604090205490565b600054600160a060020a03163314610742576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a03811615156107a3576040805160e560020a62461bcd02815260206004820152600660248201527f3335373839660000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a0381161515610804576040805160e560020a62461bcd02815260206004820152600660248201527f3335373839660000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a038381166000908152600460205260409020541615610874576040805160e560020a62461bcd02815260206004820152600660248201527f3133663937340000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03841660009081526002602052604090205460ff161515610907576005805460018082019092557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0387169081179091556000908152600260205260409020805460ff191690911790555b600160a060020a038085166000818152600360209081526040808320805460018101825590845282842001805495891673ffffffffffffffffffffffffffffffffffffffff1996871681179091558084526004835292819020805490951684179094558351918252925191927f229aec2ec4b21e700d6daf13a894e7b38c18b844b021f2eee263f04af3ea6f0092918290030190a250505050565b600154600160a060020a031681565b600054600160a060020a03163314610a13576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600054600160a060020a0382811691161415610a79576040805160e560020a62461bcd02815260206004820152600660248201527f6632306333390000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b815481835581811115610acc57600083815260209020610acc918101908301610ad1565b505050565b6106c291905b80821115610aeb5760008155600101610ad7565b50905600a165627a7a72305820f58cf40d61c62b322ef7c3dae2ed56fdb51fa517fcd2ac117d056be7bd2835be0029",
+  "deployedBytecode": "0x6080604052600436106100ae5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166338cb066f81146100b35780634f64b2be146100df57806379ba5097146101135780638da5cb5b1461012857806390ab31061461013d5780639884e801146101675780639f181b5e14610188578063cd9d4d66146101af578063d26a8d2e146101d0578063d4ee1d90146101f7578063f2fde38b1461020c575b600080fd5b3480156100bf57600080fd5b506100dd600160a060020a036004351663ffffffff6024351661022d565b005b3480156100eb57600080fd5b506100f7600435610521565b60408051600160a060020a039092168252519081900360200190f35b34801561011f57600080fd5b506100dd610549565b34801561013457600080fd5b506100f761061c565b34801561014957600080fd5b506100f7600160a060020a036004351663ffffffff6024351661062b565b34801561017357600080fd5b506100f7600160a060020a03600435166106a0565b34801561019457600080fd5b5061019d6106be565b60408051918252519081900360200190f35b3480156101bb57600080fd5b5061019d600160a060020a03600435166106c5565b3480156101dc57600080fd5b506100dd600160a060020a03600435811690602435166106e0565b34801561020357600080fd5b506100f76109a2565b34801561021857600080fd5b506100dd600160a060020a03600435166109b1565b600080548190600160a060020a03163314610292576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b83600160a060020a03811615156102f3576040805160e560020a62461bcd02815260206004820152600660248201527f3335373839660000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03851660009081526003602052604090205463ffffffff851610610368576040805160e560020a62461bcd02815260206004820152600660248201527f3934616562630000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a0385166000908152600360205260409020805463ffffffff861690811061039257fe5b600091825260209091200154600160a060020a031692506001840191505b600160a060020a03851660009081526003602052604090205463ffffffff8316101561048357600160a060020a0385166000908152600360205260409020805463ffffffff841690811061040057fe5b6000918252602080832090910154600160a060020a03888116845260039092526040909220805491909216919063ffffffff60001986011690811061044157fe5b6000918252602090912001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055600191909101906103b0565b600160a060020a03851660009081526003602052604090208054906104ac906000198301610aa8565b50600160a060020a03808416600081815260046020908152604091829020805473ffffffffffffffffffffffffffffffffffffffff1916905581519283529051928816927fc3b25a6c3b7509edde0f2e6cc317b5820a901fa82ac554709206e1d7237fe2949281900390910190a25050505050565b600580548290811061052f57fe5b600091825260209091200154600160a060020a0316905081565b600154600160a060020a031633146105ab576040805160e560020a62461bcd02815260206004820152600660248201527f6639373561650000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600160a060020a03821660009081526003602052604081205463ffffffff8316106106585750600061069a565b600160a060020a0383166000908152600360205260409020805463ffffffff841690811061068257fe5b600091825260209091200154600160a060020a031690505b92915050565b600160a060020a039081166000908152600460205260409020541690565b6005545b90565b600160a060020a031660009081526003602052604090205490565b600054600160a060020a03163314610742576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a03811615156107a3576040805160e560020a62461bcd02815260206004820152600660248201527f3335373839660000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b81600160a060020a0381161515610804576040805160e560020a62461bcd02815260206004820152600660248201527f3335373839660000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a038381166000908152600460205260409020541615610874576040805160e560020a62461bcd02815260206004820152600660248201527f3133663937340000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600160a060020a03841660009081526002602052604090205460ff161515610907576005805460018082019092557f036b6384b5eca791c62761152d0c79bb0604c104a5fb6f4eb0703f3154bb3db001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0387169081179091556000908152600260205260409020805460ff191690911790555b600160a060020a038085166000818152600360209081526040808320805460018101825590845282842001805495891673ffffffffffffffffffffffffffffffffffffffff1996871681179091558084526004835292819020805490951684179094558351918252925191927f229aec2ec4b21e700d6daf13a894e7b38c18b844b021f2eee263f04af3ea6f0092918290030190a250505050565b600154600160a060020a031681565b600054600160a060020a03163314610a13576040805160e560020a62461bcd02815260206004820152600660248201527f6537313239330000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b600054600160a060020a0382811691161415610a79576040805160e560020a62461bcd02815260206004820152600660248201527f6632306333390000000000000000000000000000000000000000000000000000604482015290519081900360640190fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b815481835581811115610acc57600083815260209020610acc918101908301610ad1565b505050565b6106c291905b80821115610aeb5760008155600101610ad7565b50905600a165627a7a72305820f58cf40d61c62b322ef7c3dae2ed56fdb51fa517fcd2ac117d056be7bd2835be0029",
+  "sourceMap": "546:4423:0:-;;;1521:28;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;530:5:45;:18;;-1:-1:-1;;;;;;530:18:45;538:10;530:18;;;546:4423:0;;;;;;",
+  "deployedSourceMap": "546:4423:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4132:835;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;4132:835:0;-1:-1:-1;;;;;4132:835:0;;;;;;;;;;;909:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;909:23:0;;;;;;;;;-1:-1:-1;;;;;909:23:0;;;;;;;;;;;;;;1152:192:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1152:192:45;;;;161:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;161:20:45;;;;2359:234:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2359:234:0;-1:-1:-1;;;;;2359:234:0;;;;;;;;;2819:126;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;2819:126:0;-1:-1:-1;;;;;2819:126:0;;;;;1662:89;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1662:89:0;;;;;;;;;;;;;;;;;;;;1970:127;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1970:127:0;-1:-1:-1;;;;;1970:127:0;;;;;3185:624;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3185:624:0;-1:-1:-1;;;;;3185:624:0;;;;;;;;;;187:23:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;187:23:45;;;;919:147;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;919:147:45;-1:-1:-1;;;;;919:147:45;;;;;4132:835:0;4340:17;654:5:45;;4340:17:0;;-1:-1:-1;;;;;654:5:45;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;4246:6:0;-1:-1:-1;;;;;448:22:48;;;;440:41;;;;;-1:-1:-1;;;;;440:41:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4285:26:0;;;;;;:18;:26;;;;;:33;4276:42;;;;4268:61;;;;;-1:-1:-1;;;;;4268:61:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4360:26:0;;;;;;:18;:26;;;;;:34;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4360:34:0;;-1:-1:-1;4360:34:0;4475:10;;;-1:-1:-1;4459:162:0;-1:-1:-1;;;;;4491:26:0;;;;;;:18;:26;;;;;:33;4487:37;;;;4459:162;;;-1:-1:-1;;;;;4581:26:0;;;;;;:18;:26;;;;;:29;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4545:26:0;;;;;:18;:26;;;;;;;:33;;4581:29;;;;;4545:26;:33;-1:-1:-1;;4572:5:0;;4545:33;;;;;;;;;;;;;;;;;:65;;-1:-1:-1;;4545:65:0;-1:-1:-1;;;;;4545:65:0;;;;;;;;;;-1:-1:-1;4526:3:0;;;;;4459:162;;;-1:-1:-1;;;;;4703:26:0;;;;;;:18;:26;;;;;:35;;;;;-1:-1:-1;;4703:35:0;;;:::i;:::-;-1:-1:-1;;;;;;4832:29:0;;;;;;;:18;:29;;;;;;;;;4825:36;;-1:-1:-1;;4825:36:0;;;4925:35;;;;;;;;;;;;;;;;;;;;;680:1:45;4132:835:0;;;;:::o;909:23::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;909:23:0;;-1:-1:-1;909:23:0;:::o;1152:192:45:-;1218:8;;-1:-1:-1;;;;;1218:8:45;1204:10;:22;1196:41;;;;;-1:-1:-1;;;;;1196:41:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;1271:8;;;1264:5;;1252:28;;-1:-1:-1;;;;;1271:8:45;;;;1264:5;;;;1252:28;;;1298:8;;;;1290:16;;-1:-1:-1;;1290:16:45;;;-1:-1:-1;;;;;1298:8:45;;1290:16;;;;1316:21;;;1152:192::o;161:20::-;;;-1:-1:-1;;;;;161:20:45;;:::o;2359:234:0:-;-1:-1:-1;;;;;2470:26:0;;2437:7;2470:26;;;:18;:26;;;;;:33;2460:43;;;;2456:78;;-1:-1:-1;2532:1:0;2517:17;;2456:78;-1:-1:-1;;;;;2552:26:0;;;;;;:18;:26;;;;;:34;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2552:34:0;;-1:-1:-1;2359:234:0;;;;;:::o;2819:126::-;-1:-1:-1;;;;;2908:30:0;;;2882:7;2908:30;;;:18;:30;;;;;;;;2819:126::o;1662:89::-;1731:6;:13;1662:89;;:::o;1970:127::-;-1:-1:-1;;;;;2057:26:0;2031:7;2057:26;;;:18;:26;;;;;:33;;1970:127::o;3185:624::-;654:5:45;;-1:-1:-1;;;;;654:5:45;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;3302:6:0;-1:-1:-1;;;;;448:22:48;;;;440:41;;;;;-1:-1:-1;;;;;440:41:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;3331:10:0;-1:-1:-1;;;;;448:22:48;;;;440:41;;;;;-1:-1:-1;;;;;440:41:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3365:30:0;;;3407:1;3365:30;;;:18;:30;;;;;;;:44;3357:63;;;;;-1:-1:-1;;;;;3357:63:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3483:24:0;;;;;;:16;:24;;;;;;;;3482:25;3478:120;;;3523:6;27:10:-1;;39:1;23:18;;;45:23;;;3523:19:0;;;;-1:-1:-1;;3523:19:0;-1:-1:-1;;;;;3523:19:0;;;;;;;;-1:-1:-1;3556:24:0;;;:16;3523:19;3556:24;;;;:31;;-1:-1:-1;;3556:31:0;;;;;;3478:120;-1:-1:-1;;;;;3608:26:0;;;;;;;:18;:26;;;;;;;;27:10:-1;;39:1;23:18;;45:23;;3608:43:0;;;;;;;;;;;;-1:-1:-1;;3608:43:0;;;;;;;;3661:30;;;:18;:30;;;;;;:39;;;;;;;;;;3765:37;;;;;;;3608:26;;3765:37;;;;;;;;;491:1:48;680::45;3185:624:0;;:::o;187:23:45:-;;;-1:-1:-1;;;;;187:23:45;;:::o;919:147::-;654:5;;-1:-1:-1;;;;;654:5:45;640:10;:19;632:38;;;;;-1:-1:-1;;;;;632:38:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013:5;;-1:-1:-1;;;;;1000:18:45;;;1013:5;;1000:18;;992:37;;;;;-1:-1:-1;;;;;992:37:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;1039:8;:20;;-1:-1:-1;;1039:20:45;-1:-1:-1;;;;;1039:20:45;;;;;;;;;;919:147::o;546:4423:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity ^0.4.24;\nimport './utility/Owned.sol';\nimport './utility/Utils.sol';\n\n/**\n    @dev Bancor Converter Registry\n\n    The Bancor Converter Registry keeps converter addresses by token addresses and vice versa. The owner can update converter addresses so that the token address always points to the updated list of converters for each token. \n\n    The contract is also able to iterate through all the tokens in the network. \n\n    Note that converter addresses for each token are returned in ascending order (from oldest to newest).\n\n*/\ncontract BancorConverterRegistry is Owned, Utils {\n    mapping (address => bool) private tokensRegistered;         // token address -> registered or not\n    mapping (address => address[]) private tokensToConverters;  // token address -> converter addresses\n    mapping (address => address) private convertersToTokens;    // converter address -> token address\n    address[] public tokens;                                    // list of all token addresses\n\n    /**\n        @dev triggered when a converter is added to the registry\n\n        @param _token   token\n        @param _address converter\n    */\n    event ConverterAddition(address indexed _token, address _address);\n\n    /**\n        @dev triggered when a converter is removed from the registry\n\n        @param _token   token\n        @param _address converter\n    */\n    event ConverterRemoval(address indexed _token, address _address);\n\n    /**\n        @dev initializes a new BancorConverterRegistry instance\n    */\n    constructor() public {\n    }\n\n    /**\n        @dev returns the number of tokens in the registry\n\n        @return number of tokens\n    */\n    function tokenCount() public view returns (uint256) {\n        return tokens.length;\n    }\n\n    /**\n        @dev returns the number of converters associated with the given token\n        or 0 if the token isn't registered\n\n        @param _token   token address\n\n        @return number of converters\n    */\n    function converterCount(address _token) public view returns (uint256) {\n        return tokensToConverters[_token].length;\n    }\n\n    /**\n        @dev returns the converter address associated with the given token\n        or zero address if no such converter exists\n\n        @param _token   token address\n        @param _index   converter index\n\n        @return converter address\n    */\n    function converterAddress(address _token, uint32 _index) public view returns (address) {\n        if (_index >= tokensToConverters[_token].length)\n            return address(0);\n\n        return tokensToConverters[_token][_index];\n    }\n\n    /**\n        @dev returns the token address associated with the given converter\n        or zero address if no such converter exists\n\n        @param _converter   converter address\n\n        @return token address\n    */\n    function tokenAddress(address _converter) public view returns (address) {\n        return convertersToTokens[_converter];\n    }\n\n    /**\n        @dev adds a new converter address for a given token to the registry\n        throws if the converter is already registered\n\n        @param _token       token address\n        @param _converter   converter address\n    */\n    function registerConverter(address _token, address _converter)\n        public\n        ownerOnly\n        validAddress(_token)\n        validAddress(_converter)\n    {\n        require(convertersToTokens[_converter] == address(0), '13f974');\n\n        // add the token to the list of tokens\n        if (!tokensRegistered[_token]) {\n            tokens.push(_token);\n            tokensRegistered[_token] = true;\n        }\n\n        tokensToConverters[_token].push(_converter);\n        convertersToTokens[_converter] = _token;\n\n        // dispatch the converter addition event\n        emit ConverterAddition(_token, _converter);\n    }\n\n    /**\n        @dev removes an existing converter from the registry\n        note that the function doesn't scale and might be needed to be called\n        multiple times when removing an older converter from a large converter list\n\n        @param _token   token address\n        @param _index   converter index\n    */\n    function unregisterConverter(address _token, uint32 _index)\n        public\n        ownerOnly\n        validAddress(_token)\n    {\n        require(_index < tokensToConverters[_token].length, '94aebc');\n\n        address converter = tokensToConverters[_token][_index];\n\n        // move all newer converters 1 position lower\n        for (uint32 i = _index + 1; i < tokensToConverters[_token].length; i++) {\n            tokensToConverters[_token][i - 1] = tokensToConverters[_token][i];\n        }\n\n        // decrease the number of converters defined for the token by 1\n        tokensToConverters[_token].length--;\n        \n        // removes the converter from the converters -> tokens list\n        delete convertersToTokens[converter];\n\n        // dispatch the converter removal event\n        emit ConverterRemoval(_token, converter);\n    }\n}\n",
   "sourcePath": "/home/lash/src/ext/sempo/contracts/solidity/contracts/BancorConverterRegistry.sol",
   "ast": {
     "absolutePath": "/home/lash/src/ext/sempo/contracts/solidity/contracts/BancorConverterRegistry.sol",
@@ -274,7 +274,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 243,
-        "sourceUnit": 11686,
+        "sourceUnit": 11730,
         "src": "25:29:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -285,7 +285,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 243,
-        "sourceUnit": 11890,
+        "sourceUnit": 11934,
         "src": "55:29:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -299,10 +299,10 @@
               "id": 4,
               "name": "Owned",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 11685,
+              "referencedDeclaration": 11729,
               "src": "582:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Owned_$11685",
+                "typeIdentifier": "t_contract$_Owned_$11729",
                 "typeString": "contract Owned"
               }
             },
@@ -317,10 +317,10 @@
               "id": 6,
               "name": "Utils",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 11889,
+              "referencedDeclaration": 11933,
               "src": "589:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Utils_$11889",
+                "typeIdentifier": "t_contract$_Utils_$11933",
                 "typeString": "contract Utils"
               }
             },
@@ -330,9 +330,9 @@
           }
         ],
         "contractDependencies": [
-          11685,
-          11889,
-          12091
+          11729,
+          11933,
+          12135
         ],
         "contractKind": "contract",
         "documentation": "@dev Bancor Converter Registry\nThe Bancor Converter Registry keeps converter addresses by token addresses and vice versa. The owner can update converter addresses so that the token address always points to the updated list of converters for each token. \nThe contract is also able to iterate through all the tokens in the network. \nNote that converter addresses for each token are returned in ascending order (from oldest to newest).",
@@ -340,9 +340,9 @@
         "id": 242,
         "linearizedBaseContracts": [
           242,
-          11889,
-          11685,
-          12091
+          11933,
+          11729,
+          12135
         ],
         "name": "BancorConverterRegistry",
         "nodeType": "ContractDefinition",
@@ -1554,7 +1554,7 @@
                       },
                       {
                         "argumentTypes": null,
-                        "hexValue": "653432616632",
+                        "hexValue": "313366393734",
                         "id": 123,
                         "isConstant": false,
                         "isLValue": false,
@@ -1565,10 +1565,10 @@
                         "src": "3411:8:0",
                         "subdenomination": null,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_75ca669c87728693dad139984b3ba79df391cadd0f6449d1f2bd33097963cef8",
-                          "typeString": "literal_string \"e42af2\""
+                          "typeIdentifier": "t_stringliteral_0fb74b9e458aa08f67bc267fee929d0b94811ffac1b7dabf480217148eb646dc",
+                          "typeString": "literal_string \"13f974\""
                         },
-                        "value": "e42af2"
+                        "value": "13f974"
                       }
                     ],
                     "expression": {
@@ -1578,18 +1578,18 @@
                           "typeString": "bool"
                         },
                         {
-                          "typeIdentifier": "t_stringliteral_75ca669c87728693dad139984b3ba79df391cadd0f6449d1f2bd33097963cef8",
-                          "typeString": "literal_string \"e42af2\""
+                          "typeIdentifier": "t_stringliteral_0fb74b9e458aa08f67bc267fee929d0b94811ffac1b7dabf480217148eb646dc",
+                          "typeString": "literal_string \"13f974\""
                         }
                       ],
                       "id": 115,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        12135,
-                        12136
+                        12179,
+                        12180
                       ],
-                      "referencedDeclaration": 12136,
+                      "referencedDeclaration": 12180,
                       "src": "3357:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2089,7 +2089,7 @@
                   "name": "ownerOnly",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11638,
+                  "referencedDeclaration": 11682,
                   "src": "3271:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2122,7 +2122,7 @@
                   "name": "validAddress",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11873,
+                  "referencedDeclaration": 11917,
                   "src": "3289:12:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -2155,7 +2155,7 @@
                   "name": "validAddress",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11873,
+                  "referencedDeclaration": 11917,
                   "src": "3318:12:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -2340,7 +2340,7 @@
                       },
                       {
                         "argumentTypes": null,
-                        "hexValue": "653666303637",
+                        "hexValue": "393461656263",
                         "id": 182,
                         "isConstant": false,
                         "isLValue": false,
@@ -2351,10 +2351,10 @@
                         "src": "4320:8:0",
                         "subdenomination": null,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_09b49c11a6463486ab043fdc8d31e2314a5e8981653ed2a0ca9fbfec30bdf449",
-                          "typeString": "literal_string \"e6f067\""
+                          "typeIdentifier": "t_stringliteral_f6d7d3ec461d252874aac9b84c58593e891f5e1d00105619ec1bc0a0e9cd8643",
+                          "typeString": "literal_string \"94aebc\""
                         },
-                        "value": "e6f067"
+                        "value": "94aebc"
                       }
                     ],
                     "expression": {
@@ -2364,18 +2364,18 @@
                           "typeString": "bool"
                         },
                         {
-                          "typeIdentifier": "t_stringliteral_09b49c11a6463486ab043fdc8d31e2314a5e8981653ed2a0ca9fbfec30bdf449",
-                          "typeString": "literal_string \"e6f067\""
+                          "typeIdentifier": "t_stringliteral_f6d7d3ec461d252874aac9b84c58593e891f5e1d00105619ec1bc0a0e9cd8643",
+                          "typeString": "literal_string \"94aebc\""
                         }
                       ],
                       "id": 175,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        12135,
-                        12136
+                        12179,
+                        12180
                       ],
-                      "referencedDeclaration": 12136,
+                      "referencedDeclaration": 12180,
                       "src": "4268:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3140,7 +3140,7 @@
                   "name": "ownerOnly",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11638,
+                  "referencedDeclaration": 11682,
                   "src": "4215:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3173,7 +3173,7 @@
                   "name": "validAddress",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11873,
+                  "referencedDeclaration": 11917,
                   "src": "4233:12:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -3292,7 +3292,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 243,
-        "sourceUnit": 11686,
+        "sourceUnit": 11730,
         "src": "25:29:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3303,7 +3303,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 243,
-        "sourceUnit": 11890,
+        "sourceUnit": 11934,
         "src": "55:29:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3317,10 +3317,10 @@
               "id": 4,
               "name": "Owned",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 11685,
+              "referencedDeclaration": 11729,
               "src": "582:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Owned_$11685",
+                "typeIdentifier": "t_contract$_Owned_$11729",
                 "typeString": "contract Owned"
               }
             },
@@ -3335,10 +3335,10 @@
               "id": 6,
               "name": "Utils",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 11889,
+              "referencedDeclaration": 11933,
               "src": "589:5:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Utils_$11889",
+                "typeIdentifier": "t_contract$_Utils_$11933",
                 "typeString": "contract Utils"
               }
             },
@@ -3348,9 +3348,9 @@
           }
         ],
         "contractDependencies": [
-          11685,
-          11889,
-          12091
+          11729,
+          11933,
+          12135
         ],
         "contractKind": "contract",
         "documentation": "@dev Bancor Converter Registry\nThe Bancor Converter Registry keeps converter addresses by token addresses and vice versa. The owner can update converter addresses so that the token address always points to the updated list of converters for each token. \nThe contract is also able to iterate through all the tokens in the network. \nNote that converter addresses for each token are returned in ascending order (from oldest to newest).",
@@ -3358,9 +3358,9 @@
         "id": 242,
         "linearizedBaseContracts": [
           242,
-          11889,
-          11685,
-          12091
+          11933,
+          11729,
+          12135
         ],
         "name": "BancorConverterRegistry",
         "nodeType": "ContractDefinition",
@@ -4572,7 +4572,7 @@
                       },
                       {
                         "argumentTypes": null,
-                        "hexValue": "653432616632",
+                        "hexValue": "313366393734",
                         "id": 123,
                         "isConstant": false,
                         "isLValue": false,
@@ -4583,10 +4583,10 @@
                         "src": "3411:8:0",
                         "subdenomination": null,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_75ca669c87728693dad139984b3ba79df391cadd0f6449d1f2bd33097963cef8",
-                          "typeString": "literal_string \"e42af2\""
+                          "typeIdentifier": "t_stringliteral_0fb74b9e458aa08f67bc267fee929d0b94811ffac1b7dabf480217148eb646dc",
+                          "typeString": "literal_string \"13f974\""
                         },
-                        "value": "e42af2"
+                        "value": "13f974"
                       }
                     ],
                     "expression": {
@@ -4596,18 +4596,18 @@
                           "typeString": "bool"
                         },
                         {
-                          "typeIdentifier": "t_stringliteral_75ca669c87728693dad139984b3ba79df391cadd0f6449d1f2bd33097963cef8",
-                          "typeString": "literal_string \"e42af2\""
+                          "typeIdentifier": "t_stringliteral_0fb74b9e458aa08f67bc267fee929d0b94811ffac1b7dabf480217148eb646dc",
+                          "typeString": "literal_string \"13f974\""
                         }
                       ],
                       "id": 115,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        12135,
-                        12136
+                        12179,
+                        12180
                       ],
-                      "referencedDeclaration": 12136,
+                      "referencedDeclaration": 12180,
                       "src": "3357:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5107,7 +5107,7 @@
                   "name": "ownerOnly",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11638,
+                  "referencedDeclaration": 11682,
                   "src": "3271:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -5140,7 +5140,7 @@
                   "name": "validAddress",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11873,
+                  "referencedDeclaration": 11917,
                   "src": "3289:12:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -5173,7 +5173,7 @@
                   "name": "validAddress",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11873,
+                  "referencedDeclaration": 11917,
                   "src": "3318:12:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -5358,7 +5358,7 @@
                       },
                       {
                         "argumentTypes": null,
-                        "hexValue": "653666303637",
+                        "hexValue": "393461656263",
                         "id": 182,
                         "isConstant": false,
                         "isLValue": false,
@@ -5369,10 +5369,10 @@
                         "src": "4320:8:0",
                         "subdenomination": null,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_09b49c11a6463486ab043fdc8d31e2314a5e8981653ed2a0ca9fbfec30bdf449",
-                          "typeString": "literal_string \"e6f067\""
+                          "typeIdentifier": "t_stringliteral_f6d7d3ec461d252874aac9b84c58593e891f5e1d00105619ec1bc0a0e9cd8643",
+                          "typeString": "literal_string \"94aebc\""
                         },
-                        "value": "e6f067"
+                        "value": "94aebc"
                       }
                     ],
                     "expression": {
@@ -5382,18 +5382,18 @@
                           "typeString": "bool"
                         },
                         {
-                          "typeIdentifier": "t_stringliteral_09b49c11a6463486ab043fdc8d31e2314a5e8981653ed2a0ca9fbfec30bdf449",
-                          "typeString": "literal_string \"e6f067\""
+                          "typeIdentifier": "t_stringliteral_f6d7d3ec461d252874aac9b84c58593e891f5e1d00105619ec1bc0a0e9cd8643",
+                          "typeString": "literal_string \"94aebc\""
                         }
                       ],
                       "id": 175,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        12135,
-                        12136
+                        12179,
+                        12180
                       ],
-                      "referencedDeclaration": 12136,
+                      "referencedDeclaration": 12180,
                       "src": "4268:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -6158,7 +6158,7 @@
                   "name": "ownerOnly",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11638,
+                  "referencedDeclaration": 11682,
                   "src": "4215:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -6191,7 +6191,7 @@
                   "name": "validAddress",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 11873,
+                  "referencedDeclaration": 11917,
                   "src": "4233:12:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$_t_address_$",
@@ -6359,10 +6359,22 @@
       "links": {},
       "address": "0xF4BA91372E10740d233db8d44B9ECba7630e4666",
       "transactionHash": "0x98520f6db302dafdaecf79d973da9487b019de9415ee0f53a8a04fba162fea5c"
+    },
+    "1582694284480": {
+      "events": {},
+      "links": {},
+      "address": "0x1b09d91a31CC77235035471731197b6990b70515",
+      "transactionHash": "0x21dd59d30c6c2d9e553ec7b085f86828139c22a64746037d020ce309aa76e1a2"
+    },
+    "1582699013057": {
+      "events": {},
+      "links": {},
+      "address": "0x8d17FBFf840D6e5071c902EF958E3549131B18a7",
+      "transactionHash": "0xfdab39e0a2a65e6bc30f8dcaf60a9629c3da9f5824d82e699e35899478c26157"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2020-02-25T22:15:59.576Z",
+  "updatedAt": "2020-02-26T09:32:34.048Z",
   "devdoc": {
     "methods": {
       "acceptOwnership()": {
